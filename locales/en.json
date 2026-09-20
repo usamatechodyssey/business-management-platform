@@ -1,0 +1,336 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "confirm": "Confirm",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "pageOf": "Page {{page}} of {{total}}",
+    "paginationLabel": "Pagination",
+    "submit": "Submit",
+    "required": "Required",
+    "optional": "Optional",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "retry": "Try again"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "pos": "POS",
+    "inventory": "Inventory",
+    "suppliers": "Suppliers",
+    "customers": "Customers",
+    "reports": "Reports",
+    "profitFund": "Profit Fund",
+    "staff": "Staff",
+    "settings": "Settings",
+    "logout": "Log out",
+    "more": "More",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primaryLabel": "Main navigation",
+    "mobileLabel": "Mobile navigation"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "subtitle": "Manage your products and stock levels.",
+    "addProduct": "Add product",
+    "editProduct": "Edit product",
+    "searchPlaceholder": "Search by name or code",
+    "filters": {
+      "category": "Category",
+      "allCategories": "All categories",
+      "lowStock": "Low stock only",
+      "status": "Status",
+      "statusActive": "Active",
+      "statusArchived": "Archived",
+      "statusAll": "All",
+      "clear": "Clear filters"
+    },
+    "columns": {
+      "name": "Product",
+      "code": "Code",
+      "category": "Category",
+      "stock": "Stock",
+      "costPrice": "Cost",
+      "sellPrice": "Sell",
+      "actions": "Actions"
+    },
+    "fields": {
+      "name": "Product name",
+      "code": "Product code",
+      "category": "Category",
+      "unit": "Unit",
+      "stockQty": "Stock quantity",
+      "costPrice": "Cost price",
+      "sellPrice": "Sell price",
+      "lowStockThreshold": "Low stock threshold",
+      "lowStockThresholdHelper": "Leave empty to use the business default"
+    },
+    "actions": {
+      "edit": "Edit",
+      "archive": "Archive",
+      "unarchive": "Restore"
+    },
+    "badges": {
+      "archived": "Archived",
+      "lowStock": "Low stock"
+    },
+    "empty": {
+      "title": "No products yet",
+      "description": "Add your first product to start tracking stock and sales.",
+      "filterTitle": "No products match your filters",
+      "filterDescription": "Try clearing your search or filter conditions.",
+      "archivedTitle": "No archived products",
+      "archivedDescription": "Archived products will appear here."
+    },
+    "lowStockBanner": {
+      "titleOne": "{{count}} product is low on stock",
+      "titleOther": "{{count}} products are low on stock",
+      "description": "Review these items and restock soon.",
+      "viewAll": "View low stock items"
+    },
+    "archiveConfirm": {
+      "title": "Archive this product?",
+      "description": "It will be hidden from the active list but kept in your sales history.",
+      "confirm": "Archive",
+      "cancel": "Cancel"
+    },
+    "units": {
+      "piece": "Piece",
+      "kg": "Kilogram",
+      "gram": "Gram",
+      "liter": "Liter",
+      "dozen": "Dozen",
+      "box": "Box"
+    },
+    "created": "Product created.",
+    "updated": "Product updated.",
+    "archived": "Product archived.",
+    "errors": {
+      "nameRequired": "Product name is required.",
+      "nameMax": "Product name is too long.",
+      "codeRequired": "Product code is required.",
+      "codeMax": "Product code is too long.",
+      "codeTaken": "This code is already in use.",
+      "categoryMax": "Category is too long.",
+      "unitMax": "Unit is too long.",
+      "stockQtyInvalid": "Stock quantity must be 0 or more.",
+      "costPriceInvalid": "Cost price must be 0 or more.",
+      "sellPriceInvalid": "Sell price must be 0 or more.",
+      "lowStockThresholdInvalid": "Threshold must be 0 or more."
+    }
+  },
+  "suppliers": {
+    "title": "Suppliers",
+    "subtitle": "Manage vendors and track what you owe them.",
+    "addSupplier": "Add supplier",
+    "editSupplier": "Edit supplier",
+    "searchPlaceholder": "Search by name, phone, or contact",
+    "fields": {
+      "name": "Supplier name",
+      "phone": "Phone number",
+      "address": "Address",
+      "contactPerson": "Contact person"
+    },
+    "card": {
+      "owes": "Owed: {{amount}}",
+      "clear": "All settled",
+      "viewPurchases": "Purchases",
+      "recordPurchase": "New purchase",
+      "pay": "Pay",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "empty": {
+      "title": "No suppliers yet",
+      "description": "Add your first supplier to start recording purchases.",
+      "filterTitle": "No suppliers match your search",
+      "filterDescription": "Try a different name or phone number."
+    },
+    "deleteConfirm": {
+      "title": "Delete this supplier?",
+      "description": "This action cannot be undone. Suppliers with purchase records cannot be deleted.",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "created": "Supplier added.",
+    "updated": "Supplier updated.",
+    "deleted": "Supplier deleted.",
+    "purchase": {
+      "title": "Record purchase",
+      "date": "Purchase date",
+      "invoiceNo": "Invoice number",
+      "invoiceNoHelper": "Optional",
+      "items": "Items",
+      "addItem": "Add item",
+      "product": "Product",
+      "selectProduct": "Select a product",
+      "qty": "Quantity",
+      "cost": "Unit cost",
+      "subtotal": "Subtotal",
+      "removeItem": "Remove item",
+      "totalCost": "Total cost",
+      "initialPayment": "Initial payment",
+      "initialPaymentHelper": "How much you're paying right now. Leave 0 to add the full amount to what you owe.",
+      "recordButton": "Record purchase",
+      "recorded": "Purchase recorded.",
+      "noProductsTitle": "Add products first",
+      "noProductsDescription": "You need at least one product in inventory before you can record a purchase.",
+      "errors": {
+        "noItems": "Add at least one item.",
+        "productRequired": "Select a product for every row.",
+        "qtyInvalid": "Quantity must be a whole number greater than 0.",
+        "costInvalid": "Cost must be 0 or more.",
+        "paymentInvalid": "Initial payment must be 0 or more.",
+        "paymentExceedsTotal": "Initial payment cannot exceed the total cost."
+      }
+    },
+    "payment": {
+      "title": "Record payment",
+      "purchaseLabel": "Which purchase",
+      "amount": "Amount",
+      "amountHelper": "Outstanding: {{amount}}",
+      "date": "Payment date",
+      "note": "Note",
+      "recordButton": "Record payment",
+      "recorded": "Payment recorded.",
+      "empty": {
+        "title": "Nothing to pay",
+        "description": "This supplier has no outstanding purchases."
+      },
+      "errors": {
+        "purchaseRequired": "Select a purchase.",
+        "amountInvalid": "Amount must be greater than zero.",
+        "amountExceedsOutstanding": "Amount cannot exceed the outstanding balance.",
+        "dateInvalid": "Enter a valid date.",
+        "noteMax": "Note is too long."
+      }
+    },
+    "purchasesList": {
+      "title": "{{name}} — purchases",
+      "items": "items",
+      "statusPaid": "Paid",
+      "statusDue": "{{amount}} due",
+      "deleteConfirm": "Delete this purchase? Stock will be reversed.",
+      "cannotDelete": "Purchases with recorded payments cannot be deleted.",
+      "empty": {
+        "title": "No purchases yet",
+        "description": "Record this supplier's first purchase to get started."
+      }
+    },
+    "errors": {
+      "nameRequired": "Supplier name is required.",
+      "nameMax": "Supplier name is too long.",
+      "phoneRequired": "Phone number is required.",
+      "phoneMin": "Enter a valid phone number.",
+      "phoneMax": "Phone number is too long.",
+      "phoneTaken": "This phone number is already registered to another supplier.",
+      "addressMax": "Address is too long.",
+      "contactPersonMax": "Contact person name is too long.",
+      "hasPurchases": "This supplier has purchase records and cannot be deleted."
+    }
+  },
+  "header": {
+    "accountMenuLabel": "Account menu",
+    "signedInAs": "Signed in as"
+  },
+  "roles": {
+    "owner": "Owner",
+    "manager": "Manager",
+    "cashier": "Cashier",
+    "accountant": "Accountant"
+  },
+  "auth": {
+    "appName": "Business Manager",
+    "loginTitle": "Log in to your account",
+    "identifierLabel": "Phone or email",
+    "passwordLabel": "Password",
+    "loginButton": "Log in",
+    "loginError": "Invalid phone/email or password.",
+    "registerTitle": "Create your business account",
+    "registerButton": "Create account",
+    "logoutConfirm": "Are you sure you want to log out?",
+    "noAccount": "Don't have an account?",
+    "createAccountLink": "Create one",
+    "businessNameLabel": "Business name",
+    "ownerNameLabel": "Your name",
+    "phoneLabel": "Phone number",
+    "emailLabel": "Email",
+    "emailHelper": "Optional",
+    "confirmPasswordLabel": "Confirm password",
+    "passwordHint": "At least 8 characters, including a letter and a number.",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "unauthorized": "You need to log in to continue.",
+    "forbidden": "You don't have permission to do this.",
+    "notFound": "The item you're looking for could not be found.",
+    "validationFailed": "Please check the highlighted fields.",
+    "reference": "Reference",
+    "pageNotFoundTitle": "Page not found",
+    "pageNotFoundDescription": "The page you're looking for doesn't exist or has been moved.",
+    "businessNameMin": "Business name must be at least 2 characters.",
+    "businessNameMax": "Business name is too long.",
+    "ownerNameMin": "Your name must be at least 2 characters.",
+    "ownerNameMax": "Your name is too long.",
+    "phoneMin": "Enter a valid phone number.",
+    "phoneMax": "Phone number is too long.",
+    "emailInvalid": "Enter a valid email address.",
+    "emailMax": "Email is too long.",
+    "passwordMin": "Password must be at least 8 characters.",
+    "passwordLetter": "Password must contain at least one letter.",
+    "passwordNumber": "Password must contain at least one number.",
+    "passwordMismatch": "Passwords do not match.",
+    "phoneTaken": "This phone number is already registered.",
+    "emailTaken": "This email is already registered."
+  },
+  "dashboard": {
+    "rangeLabel": "Time range",
+    "ranges": {
+      "today": "Today",
+      "week": "Last 7 days",
+      "month": "This month",
+      "year": "This year",
+      "custom": "Custom",
+      "from": "From",
+      "to": "To",
+      "apply": "Apply"
+    },
+    "metrics": {
+      "sales": "Sales",
+      "profit": "Profit",
+      "receivables": "Receivables",
+      "receivablesHint": "{{count}} customers owe",
+      "lowStock": "Low stock items"
+    },
+    "topItems": "Top selling items",
+    "topItemsQty": "{{count}} sold",
+    "empty": {
+      "welcomeTitle": "Welcome to Business Manager",
+      "welcomeDescription": "Get started by adding your first product to the inventory.",
+      "addProduct": "Add product",
+      "noSalesTitle": "No sales in this period",
+      "noSalesDescription": "Try a different time range, or record a sale in POS."
+    }
+  },
+  "language": {
+    "en": "English",
+    "ur": "Urdu",
+    "switchTo": "Switch language"
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "common": {
+    "save": "محفوظ کریں",
+    "cancel": "منسوخ کریں",
+    "delete": "حذف کریں",
+    "edit": "ترمیم کریں",
+    "add": "شامل کریں",
+    "search": "تلاش کریں",
+    "loading": "لوڈ ہو رہا ہے...",
+    "noResults": "کوئی نتیجہ نہیں ملا۔",
+    "confirm": "تصدیق کریں",
+    "close": "بند کریں",
+    "yes": "جی ہاں",
+    "no": "نہیں",
+    "back": "پیچھے",
+    "next": "اگلا",
+    "previous": "پچھلا",
+    "pageOf": "صفحہ {{page}} از {{total}}",
+    "paginationLabel": "صفحہ بندی",
+    "submit": "جمع کروائیں",
+    "required": "لازمی",
+    "optional": "اختیاری",
+    "actions": "اعمال",
+    "status": "حیثیت",
+    "active": "فعال",
+    "inactive": "غیر فعال",
+    "retry": "دوبارہ کوشش کریں"
+  },
+  "nav": {
+    "dashboard": "ڈیش بورڈ",
+    "pos": "پی او ایس",
+    "inventory": "انوینٹری",
+    "suppliers": "سپلائرز",
+    "customers": "کسٹمرز",
+    "reports": "رپورٹس",
+    "profitFund": "پرافٹ فنڈ",
+    "staff": "اسٹاف",
+    "settings": "ترتیبات",
+    "logout": "لاگ آؤٹ",
+    "more": "مزید",
+    "openMenu": "مینو کھولیں",
+    "closeMenu": "مینو بند کریں",
+    "primaryLabel": "مرکزی نیویگیشن",
+    "mobileLabel": "موبائل نیویگیشن"
+  },
+  "inventory": {
+    "title": "انوینٹری",
+    "subtitle": "اپنی پروڈکٹس اور اسٹاک کا انتظام کریں۔",
+    "addProduct": "پروڈکٹ شامل کریں",
+    "editProduct": "پروڈکٹ میں ترمیم کریں",
+    "searchPlaceholder": "نام یا کوڈ سے تلاش کریں",
+    "filters": {
+      "category": "زمرہ",
+      "allCategories": "تمام زمرے",
+      "lowStock": "صرف کم اسٹاک",
+      "status": "حیثیت",
+      "statusActive": "فعال",
+      "statusArchived": "محفوظ شدہ",
+      "statusAll": "تمام",
+      "clear": "فلٹرز صاف کریں"
+    },
+    "columns": {
+      "name": "پروڈکٹ",
+      "code": "کوڈ",
+      "category": "زمرہ",
+      "stock": "اسٹاک",
+      "costPrice": "لاگت",
+      "sellPrice": "فروخت",
+      "actions": "اعمال"
+    },
+    "fields": {
+      "name": "پروڈکٹ کا نام",
+      "code": "پروڈکٹ کوڈ",
+      "category": "زمرہ",
+      "unit": "یونٹ",
+      "stockQty": "اسٹاک کی مقدار",
+      "costPrice": "لاگت کی قیمت",
+      "sellPrice": "فروخت کی قیمت",
+      "lowStockThreshold": "کم اسٹاک کی حد",
+      "lowStockThresholdHelper": "کاروبار کی ڈیفالٹ حد استعمال کرنے کے لیے خالی چھوڑیں"
+    },
+    "actions": {
+      "edit": "ترمیم",
+      "archive": "محفوظ کریں",
+      "unarchive": "بحال کریں"
+    },
+    "badges": {
+      "archived": "محفوظ شدہ",
+      "lowStock": "کم اسٹاک"
+    },
+    "empty": {
+      "title": "ابھی کوئی پروڈکٹ نہیں",
+      "description": "اسٹاک اور فروخت ٹریک کرنے کے لیے اپنی پہلی پروڈکٹ شامل کریں۔",
+      "filterTitle": "کوئی پروڈکٹ فلٹرز سے مطابقت نہیں رکھتی",
+      "filterDescription": "اپنی تلاش یا فلٹر کی شرائط صاف کرکے دیکھیں۔",
+      "archivedTitle": "کوئی محفوظ شدہ پروڈکٹ نہیں",
+      "archivedDescription": "محفوظ شدہ پروڈکٹس یہاں ظاہر ہوں گی۔"
+    },
+    "lowStockBanner": {
+      "titleOne": "{{count}} پروڈکٹ کا اسٹاک کم ہے",
+      "titleOther": "{{count}} پروڈکٹس کا اسٹاک کم ہے",
+      "description": "ان اشیاء کا جائزہ لیں اور جلد اسٹاک بھریں۔",
+      "viewAll": "کم اسٹاک اشیاء دیکھیں"
+    },
+    "archiveConfirm": {
+      "title": "اس پروڈکٹ کو محفوظ کریں؟",
+      "description": "یہ فعال فہرست سے چھپ جائے گی لیکن آپ کی فروخت کی تاریخ میں محفوظ رہے گی۔",
+      "confirm": "محفوظ کریں",
+      "cancel": "منسوخ کریں"
+    },
+    "units": {
+      "piece": "عدد",
+      "kg": "کلوگرام",
+      "gram": "گرام",
+      "liter": "لیٹر",
+      "dozen": "درجن",
+      "box": "بکس"
+    },
+    "created": "پروڈکٹ بنا دی گئی۔",
+    "updated": "پروڈکٹ اپ ڈیٹ ہو گئی۔",
+    "archived": "پروڈکٹ محفوظ کر دی گئی۔",
+    "errors": {
+      "nameRequired": "پروڈکٹ کا نام درکار ہے۔",
+      "nameMax": "پروڈکٹ کا نام بہت لمبا ہے۔",
+      "codeRequired": "پروڈکٹ کوڈ درکار ہے۔",
+      "codeMax": "پروڈکٹ کوڈ بہت لمبا ہے۔",
+      "codeTaken": "یہ کوڈ پہلے سے استعمال میں ہے۔",
+      "categoryMax": "زمرہ بہت لمبا ہے۔",
+      "unitMax": "یونٹ بہت لمبا ہے۔",
+      "stockQtyInvalid": "اسٹاک کی مقدار 0 یا اس سے زیادہ ہونی چاہیے۔",
+      "costPriceInvalid": "لاگت کی قیمت 0 یا اس سے زیادہ ہونی چاہیے۔",
+      "sellPriceInvalid": "فروخت کی قیمت 0 یا اس سے زیادہ ہونی چاہیے۔",
+      "lowStockThresholdInvalid": "حد 0 یا اس سے زیادہ ہونی چاہیے۔"
+    }
+  },
+  "suppliers": {
+    "title": "سپلائرز",
+    "subtitle": "وینڈرز کا انتظام کریں اور ان کے واجب الادا کا حساب رکھیں۔",
+    "addSupplier": "سپلائر شامل کریں",
+    "editSupplier": "سپلائر میں ترمیم کریں",
+    "searchPlaceholder": "نام، فون، یا رابطہ سے تلاش کریں",
+    "fields": {
+      "name": "سپلائر کا نام",
+      "phone": "فون نمبر",
+      "address": "پتہ",
+      "contactPerson": "رابطہ شخص"
+    },
+    "card": {
+      "owes": "واجب الادا: {{amount}}",
+      "clear": "حساب صاف",
+      "viewPurchases": "خریداریاں",
+      "recordPurchase": "نئی خریداری",
+      "pay": "ادائیگی",
+      "edit": "ترمیم",
+      "delete": "حذف کریں"
+    },
+    "empty": {
+      "title": "ابھی کوئی سپلائر نہیں",
+      "description": "خریداریاں ریکارڈ کرنے کے لیے اپنا پہلا سپلائر شامل کریں۔",
+      "filterTitle": "کوئی سپلائر آپ کی تلاش سے مطابقت نہیں رکھتا",
+      "filterDescription": "کوئی دوسرا نام یا فون نمبر آزمائیں۔"
+    },
+    "deleteConfirm": {
+      "title": "اس سپلائر کو حذف کریں؟",
+      "description": "یہ عمل واپس نہیں ہو سکتا۔ جن سپلائرز کی خریداریوں کا ریکارڈ موجود ہے وہ حذف نہیں ہو سکتے۔",
+      "confirm": "حذف کریں",
+      "cancel": "منسوخ کریں"
+    },
+    "created": "سپلائر شامل ہو گیا۔",
+    "updated": "سپلائر اپ ڈیٹ ہو گیا۔",
+    "deleted": "سپلائر حذف ہو گیا۔",
+    "purchase": {
+      "title": "خریداری ریکارڈ کریں",
+      "date": "خریداری کی تاریخ",
+      "invoiceNo": "انوائس نمبر",
+      "invoiceNoHelper": "اختیاری",
+      "items": "اشیاء",
+      "addItem": "شے شامل کریں",
+      "product": "پروڈکٹ",
+      "selectProduct": "پروڈکٹ منتخب کریں",
+      "qty": "مقدار",
+      "cost": "فی یونٹ لاگت",
+      "subtotal": "ذیلی میزان",
+      "removeItem": "شے ہٹائیں",
+      "totalCost": "کل لاگت",
+      "initialPayment": "ابتدائی ادائیگی",
+      "initialPaymentHelper": "ابھی کتنی ادائیگی کر رہے ہیں۔ پورا واجب الادا شامل کرنے کے لیے 0 چھوڑ دیں۔",
+      "recordButton": "خریداری ریکارڈ کریں",
+      "recorded": "خریداری ریکارڈ ہو گئی۔",
+      "noProductsTitle": "پہلے پروڈکٹس شامل کریں",
+      "noProductsDescription": "خریداری ریکارڈ کرنے سے پہلے آپ کے انوینٹری میں کم از کم ایک پروڈکٹ ہونی چاہیے۔",
+      "errors": {
+        "noItems": "کم از کم ایک شے شامل کریں۔",
+        "productRequired": "ہر سطر کے لیے کوئی پروڈکٹ منتخب کریں۔",
+        "qtyInvalid": "مقدار 0 سے بڑا صحیح عدد ہونا چاہیے۔",
+        "costInvalid": "لاگت 0 یا اس سے زیادہ ہونی چاہیے۔",
+        "paymentInvalid": "ابتدائی ادائیگی 0 یا اس سے زیادہ ہونی چاہیے۔",
+        "paymentExceedsTotal": "ابتدائی ادائیگی کل لاگت سے زیادہ نہیں ہو سکتی۔"
+      }
+    },
+    "payment": {
+      "title": "ادائیگی ریکارڈ کریں",
+      "purchaseLabel": "کون سی خریداری",
+      "amount": "رقم",
+      "amountHelper": "واجب الادا: {{amount}}",
+      "date": "ادائیگی کی تاریخ",
+      "note": "نوٹ",
+      "recordButton": "ادائیگی ریکارڈ کریں",
+      "recorded": "ادائیگی ریکارڈ ہو گئی۔",
+      "empty": {
+        "title": "ادائیگی کے لیے کچھ نہیں",
+        "description": "اس سپلائر کی کوئی واجب الادا خریداری نہیں ہے۔"
+      },
+      "errors": {
+        "purchaseRequired": "کوئی خریداری منتخب کریں۔",
+        "amountInvalid": "رقم 0 سے زیادہ ہونی چاہیے۔",
+        "amountExceedsOutstanding": "رقم واجب الادا سے زیادہ نہیں ہو سکتی۔",
+        "dateInvalid": "درست تاریخ درج کریں۔",
+        "noteMax": "نوٹ بہت لمبا ہے۔"
+      }
+    },
+    "purchasesList": {
+      "title": "{{name}} — خریداریاں",
+      "items": "اشیاء",
+      "statusPaid": "ادا شدہ",
+      "statusDue": "{{amount}} واجب الادا",
+      "deleteConfirm": "اس خریداری کو حذف کریں؟ اسٹاک واپس ہو جائے گا۔",
+      "cannotDelete": "جن خریداریوں کی ادائیگیاں ریکارڈ ہو چکی ہیں وہ حذف نہیں ہو سکتیں۔",
+      "empty": {
+        "title": "ابھی کوئی خریداری نہیں",
+        "description": "شروعات کرنے کے لیے اس سپلائر کی پہلی خریداری ریکارڈ کریں۔"
+      }
+    },
+    "errors": {
+      "nameRequired": "سپلائر کا نام درکار ہے۔",
+      "nameMax": "سپلائر کا نام بہت لمبا ہے۔",
+      "phoneRequired": "فون نمبر درکار ہے۔",
+      "phoneMin": "درست فون نمبر درج کریں۔",
+      "phoneMax": "فون نمبر بہت لمبا ہے۔",
+      "phoneTaken": "یہ فون نمبر پہلے سے کسی دوسرے سپلائر کے نام رجسٹرڈ ہے۔",
+      "addressMax": "پتہ بہت لمبا ہے۔",
+      "contactPersonMax": "رابطہ شخص کا نام بہت لمبا ہے۔",
+      "hasPurchases": "اس سپلائر کی خریداریوں کا ریکارڈ موجود ہے، اس لیے حذف نہیں کیا جا سکتا۔"
+    }
+  },
+  "header": {
+    "accountMenuLabel": "اکاؤنٹ مینو",
+    "signedInAs": "بطور سائن ان"
+  },
+  "roles": {
+    "owner": "مالک",
+    "manager": "مینیجر",
+    "cashier": "کیشیئر",
+    "accountant": "اکاؤنٹنٹ"
+  },
+  "auth": {
+    "appName": "Business Manager",
+    "loginTitle": "اپنے اکاؤنٹ میں لاگ ان کریں",
+    "identifierLabel": "فون نمبر یا ای میل",
+    "passwordLabel": "پاس ورڈ",
+    "loginButton": "لاگ ان کریں",
+    "loginError": "فون/ای میل یا پاس ورڈ درست نہیں۔",
+    "registerTitle": "اپنا کاروباری اکاؤنٹ بنائیں",
+    "registerButton": "اکاؤنٹ بنائیں",
+    "logoutConfirm": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
+    "noAccount": "اکاؤنٹ نہیں ہے؟",
+    "createAccountLink": "بنائیں",
+    "businessNameLabel": "کاروبار کا نام",
+    "ownerNameLabel": "آپ کا نام",
+    "phoneLabel": "فون نمبر",
+    "emailLabel": "ای میل",
+    "emailHelper": "اختیاری",
+    "confirmPasswordLabel": "پاس ورڈ کی تصدیق",
+    "passwordHint": "کم از کم 8 حروف، جن میں ایک حرف اور ایک ہندسہ شامل ہو۔",
+    "haveAccount": "پہلے سے اکاؤنٹ ہے؟",
+    "loginLink": "لاگ ان کریں"
+  },
+  "errors": {
+    "generic": "کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔",
+    "unauthorized": "جاری رکھنے کے لیے لاگ ان کریں۔",
+    "forbidden": "آپ کو یہ کرنے کی اجازت نہیں ہے۔",
+    "notFound": "مطلوبہ چیز نہیں ملی۔",
+    "validationFailed": "براہ کرم نشان زدہ خانوں کو چیک کریں۔",
+    "reference": "حوالہ",
+    "pageNotFoundTitle": "صفحہ نہیں ملا",
+    "pageNotFoundDescription": "آپ جو صفحہ تلاش کر رہے ہیں وہ موجود نہیں یا منتقل ہو گیا ہے۔",
+    "businessNameMin": "کاروبار کا نام کم از کم 2 حروف کا ہونا چاہیے۔",
+    "businessNameMax": "کاروبار کا نام بہت لمبا ہے۔",
+    "ownerNameMin": "آپ کا نام کم از کم 2 حروف کا ہونا چاہیے۔",
+    "ownerNameMax": "آپ کا نام بہت لمبا ہے۔",
+    "phoneMin": "درست فون نمبر درج کریں۔",
+    "phoneMax": "فون نمبر بہت لمبا ہے۔",
+    "emailInvalid": "درست ای میل ایڈریس درج کریں۔",
+    "emailMax": "ای میل بہت لمبی ہے۔",
+    "passwordMin": "پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔",
+    "passwordLetter": "پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔",
+    "passwordNumber": "پاس ورڈ میں کم از کم ایک ہندسہ ہونا چاہیے۔",
+    "passwordMismatch": "پاس ورڈ مماثل نہیں ہیں۔",
+    "phoneTaken": "یہ فون نمبر پہلے سے رجسٹرڈ ہے۔",
+    "emailTaken": "یہ ای میل پہلے سے رجسٹرڈ ہے۔"
+  },
+  "dashboard": {
+    "rangeLabel": "وقت کی حد",
+    "ranges": {
+      "today": "آج",
+      "week": "پچھلے 7 دن",
+      "month": "اس ماہ",
+      "year": "اس سال",
+      "custom": "حسبِ ضرورت",
+      "from": "سے",
+      "to": "تک",
+      "apply": "لاگو کریں"
+    },
+    "metrics": {
+      "sales": "فروخت",
+      "profit": "منافع",
+      "receivables": "واجب الادا",
+      "receivablesHint": "{{count}} گاہکوں کے واجب الادا",
+      "lowStock": "کم اسٹاک اشیاء"
+    },
+    "topItems": "سب سے زیادہ فروخت ہونے والی اشیاء",
+    "topItemsQty": "{{count}} فروخت",
+    "empty": {
+      "welcomeTitle": "بزنس مینیجر میں خوش آمدید",
+      "welcomeDescription": "انوینٹری میں اپنی پہلی پروڈکٹ شامل کرکے شروعات کریں۔",
+      "addProduct": "پروڈکٹ شامل کریں",
+      "noSalesTitle": "اس مدت میں کوئی فروخت نہیں",
+      "noSalesDescription": "کوئی دوسری مدت منتخب کریں، یا POS میں فروخت ریکارڈ کریں۔"
+    }
+  },
+  "language": {
+    "en": "انگریزی",
+    "ur": "اردو",
+    "switchTo": "زبان تبدیل کریں"
+  }
+}
