@@ -1,4 +1,34 @@
 {
+  "_sectionGuide": [
+    "═══════════════════════════════════════════════════════════════════",
+    "  SECTION GUIDE — find which section to edit for any change",
+    "═══════════════════════════════════════════════════════════════════",
+    " 1. common               — shared UI labels (Save, Cancel, Yes, No)",
+    " 2. nav                  — sidebar & bottom-nav item labels",
+    " 3. auth                 — login / register page strings",
+    " 4. dashboard            — dashboard (metrics, ranges, top items)",
+    " 5. inventory            — inventory (products, filters, low-stock)",
+    " 6. suppliers            — suppliers (purchases, payments)",
+    " 7. customers            — customers & khata (ledger, tooltip)",
+    " 8. pos                  — point of sale (cart, payment, receipt)",
+    " 9. profitFund           — profit fund (tiers, disbursements)",
+    "10. reports              — reports (trend, breakdown, top lists)",
+    "11. staff                — staff management (roles, deactivation)",
+    "12. billing              — owner-side billing page (subscription)",
+    "13. settings             — business settings (profile/modules/khata)",
+    "14. permissions          — human-readable permission labels",
+    "15. roles                — role display names (Owner, Manager, ...)",
+    "16. admin                — platform admin console (tenants, payments)",
+    "17. whatsapp             — WhatsApp reminder modal (customer side)",
+    "18. subscriptionBlocked  — full-screen blocked screen (business side)",
+    "19. header               — header user menu",
+    "20. language             — language switcher labels",
+    "21. errors               — generic error messages",
+    "═══════════════════════════════════════════════════════════════════",
+    "NOTE: Every key here MUST also exist in ur.json or the build fails.",
+    "NOTE: JSX-internal strings and DB-only strings don't belong here."
+  ],
+
   "common": {
     "save": "Save",
     "cancel": "Cancel",
@@ -26,6 +56,7 @@
     "inactive": "Inactive",
     "retry": "Try again"
   },
+
   "nav": {
     "dashboard": "Dashboard",
     "pos": "POS",
@@ -35,14 +66,72 @@
     "reports": "Reports",
     "profitFund": "Profit Fund",
     "staff": "Staff",
+    "billing": "Billing",
     "settings": "Settings",
     "logout": "Log out",
     "more": "More",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "primaryLabel": "Main navigation",
+    "disabledTooltip": "Renew your subscription to unlock",
     "mobileLabel": "Mobile navigation"
   },
+
+  "auth": {
+    "appName": "Business Manager",
+    "loginTitle": "Log in to your account",
+    "identifierLabel": "Phone or email",
+    "passwordLabel": "Password",
+    "loginButton": "Log in",
+    "loginError": "Invalid phone/email or password.",
+    "registerTitle": "Create your business account",
+    "registerButton": "Create account",
+    "logoutConfirm": "Are you sure you want to log out?",
+    "noAccount": "Don't have an account?",
+    "createAccountLink": "Create one",
+    "businessNameLabel": "Business name",
+    "ownerNameLabel": "Your name",
+    "phoneLabel": "Phone number",
+    "emailLabel": "Email",
+    "emailHelper": "Optional",
+    "confirmPasswordLabel": "Confirm password",
+    "passwordHint": "At least 8 characters, including a letter and a number.",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in"
+  },
+
+  "dashboard": {
+    "rangeLabel": "Time range",
+    "ranges": {
+      "today": "Today",
+      "week": "Last 7 days",
+      "month": "This month",
+      "quarter": "Last 3 months",
+      "halfYear": "Last 6 months",
+      "year": "This year",
+      "custom": "Custom",
+      "from": "From",
+      "to": "To",
+      "apply": "Apply"
+    },
+    "metrics": {
+      "sales": "Sales",
+      "profit": "Profit",
+      "receivables": "Receivables",
+      "receivablesHint": "{{count}} customers owe",
+      "lowStock": "Low stock items"
+    },
+    "topItems": "Top selling items",
+    "topItemsQty": "{{count}} sold",
+    "empty": {
+      "welcomeTitle": "Welcome to Business Manager",
+      "welcomeDescription": "Get started by adding your first product to the inventory.",
+      "addProduct": "Add product",
+      "noSalesTitle": "No sales in this period",
+      "noSalesDescription": "Try a different time range, or record a sale in POS."
+    }
+  },
+
   "inventory": {
     "title": "Inventory",
     "subtitle": "Manage your products and stock levels.",
@@ -133,6 +222,7 @@
       "lowStockThresholdInvalid": "Threshold must be 0 or more."
     }
   },
+
   "suppliers": {
     "title": "Suppliers",
     "subtitle": "Manage vendors and track what you owe them.",
@@ -243,38 +333,1151 @@
       "hasPurchases": "This supplier has purchase records and cannot be deleted."
     }
   },
-  "header": {
-    "accountMenuLabel": "Account menu",
-    "signedInAs": "Signed in as"
+
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Track balances and payments in each customer's khata.",
+    "addCustomer": "Add customer",
+    "editCustomer": "Edit customer",
+    "searchPlaceholder": "Search by name, phone, or tag",
+    "khataTooltip": "A customer's running record of sales and payments — replaces the handwritten khata book.",
+    "fields": {
+      "name": "Customer name",
+      "phone": "Phone number",
+      "address": "Address",
+      "creditLimit": "Credit limit",
+      "dueDate": "Payment due date",
+      "guarantorName": "Guarantor name",
+      "guarantorPhone": "Guarantor phone",
+      "tag": "Tag",
+      "notes": "Notes"
+    },
+    "card": {
+      "owes": "Owed: {{amount}}",
+      "clear": "All settled",
+      "overLimit": "Over credit limit",
+      "viewLedger": "Khata",
+      "recordPayment": "Pay",
+      "remind": "Remind",
+      "edit": "Edit",
+      "delete": "Delete",
+      "duePrefix": "Due {{date}}",
+      "guarantorPrefix": "Guarantor: {{name}}"
+    },
+    "empty": {
+      "title": "No customers yet",
+      "description": "Add your first customer to start tracking khata.",
+      "filterTitle": "No customers match your search",
+      "filterDescription": "Try a different name, phone, or tag."
+    },
+    "deleteConfirm": {
+      "title": "Delete this customer?",
+      "description": "This action cannot be undone. Customers with khata history cannot be deleted.",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "created": "Customer added.",
+    "updated": "Customer updated.",
+    "deleted": "Customer deleted.",
+    "payment": {
+      "title": "Record payment",
+      "amount": "Amount",
+      "amountHelper": "Outstanding: {{amount}}",
+      "date": "Payment date",
+      "note": "Note",
+      "recordButton": "Record payment",
+      "recorded": "Payment recorded.",
+      "empty": {
+        "title": "Nothing to pay",
+        "description": "This customer has no outstanding balance."
+      },
+      "errors": {
+        "amountInvalid": "Amount must be greater than zero.",
+        "amountExceedsOutstanding": "Amount cannot exceed the outstanding balance.",
+        "dateInvalid": "Enter a valid date.",
+        "noteMax": "Note is too long."
+      }
+    },
+    "ledger": {
+      "title": "{{name}} — khata",
+      "columns": {
+        "date": "Date",
+        "type": "Type",
+        "amount": "Amount",
+        "note": "Note",
+        "balance": "Balance"
+      },
+      "typeSale": "Sale",
+      "typePayment": "Payment",
+      "runningBalance": "Running balance: {{amount}}",
+      "empty": {
+        "title": "No entries yet",
+        "description": "This customer's khata is empty. Sales and payments will appear here."
+      }
+    },
+    "errors": {
+      "nameRequired": "Customer name is required.",
+      "nameMax": "Customer name is too long.",
+      "phoneRequired": "Phone number is required.",
+      "phoneMin": "Enter a valid phone number.",
+      "phoneMax": "Phone number is too long.",
+      "phoneTaken": "This phone number is already registered to another customer.",
+      "addressMax": "Address is too long.",
+      "creditLimitInvalid": "Credit limit must be 0 or more.",
+      "guarantorNameMax": "Guarantor name is too long.",
+      "guarantorPhoneMax": "Guarantor phone is too long.",
+      "tagMax": "Tag is too long.",
+      "notesMax": "Notes are too long.",
+      "hasLedgerEntries": "This customer has khata history and cannot be deleted."
+    }
   },
+
+  "pos": {
+    "title": "Point of Sale",
+    "subtitle": "Record a sale quickly.",
+    "searchPlaceholder": "Search by name or code",
+    "products": {
+      "title": "Products",
+      "empty": "No products available.",
+      "noMatch": "No products match your search.",
+      "outOfStock": "Out of stock",
+      "stockLabel": "{{count}} in stock",
+      "inCartBadge": "{{count}} in cart"
+    },
+    "cart": {
+      "title": "Cart",
+      "empty": "No items in cart",
+      "emptyHint": "Tap a product to add it.",
+      "clear": "Clear",
+      "removeItem": "Remove",
+      "qtyLabel": "Qty",
+      "decrease": "Decrease quantity",
+      "increase": "Increase quantity",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "checkout": "Checkout",
+      "itemCountOne": "{{count}} item",
+      "itemCountOther": "{{count}} items"
+    },
+    "payment": {
+      "title": "Payment",
+      "methodLabel": "Payment method",
+      "methodCash": "Cash",
+      "methodKhata": "Khata",
+      "methodOnline": "Online",
+      "methodPartial": "Partial",
+      "customerLabel": "Customer",
+      "selectCustomer": "Select a customer",
+      "addNewCustomer": "Add new customer",
+      "cashReceivedLabel": "Cash received",
+      "changeLabel": "Change",
+      "amountPaidLabel": "Amount paid now",
+      "amountPaidHelper": "Enter what the customer is paying now. The rest goes on khata.",
+      "summaryLabel": "Total",
+      "submit": "Complete sale",
+      "errors": {
+        "customerRequired": "Please select a customer for khata or partial payment.",
+        "amountPaidRequired": "Enter the amount the customer is paying.",
+        "amountPaidTooLow": "Amount paid must be greater than zero.",
+        "amountPaidTooHigh": "Amount paid must be less than the total."
+      }
+    },
+    "quickCustomer": {
+      "title": "New customer",
+      "nameLabel": "Name",
+      "phoneLabel": "Phone number",
+      "save": "Save customer",
+      "errors": {
+        "nameRequired": "Customer name is required.",
+        "phoneRequired": "Phone number is required."
+      }
+    },
+    "receipt": {
+      "title": "Sale recorded",
+      "saleId": "Sale ID",
+      "date": "Date",
+      "items": "Items",
+      "total": "Total",
+      "paid": "Paid",
+      "due": "Due",
+      "method": "Method",
+      "customer": "Customer",
+      "newSale": "New sale",
+      "close": "Close"
+    },
+    "errors": {
+      "insufficientStock": "Only {{available}} of {{productName}} available.",
+      "creditLimitExceeded": "This sale would exceed the customer's credit limit of {{limit}}.",
+      "emptyCart": "Add at least one item to the cart."
+    },
+    "warnings": {
+      "creditLimitExceeded": "Sale recorded, but it exceeds the customer's credit limit."
+    }
+  },
+
+  "profitFund": {
+    "title": "Profit Fund",
+    "subtitle": "Set aside a share of profit for any purpose — charity, savings, staff bonus, or your own goals.",
+    "addTier": "Add tier",
+    "empty": {
+      "title": "No tiers yet",
+      "description": "Create your first fund tier. You name it — \"Barkat Khana\", \"Charity\", \"Staff Bonus\", or anything else.",
+      "addFirst": "Create first tier"
+    },
+    "summary": {
+      "rangeProfit": "Profit for {{range}}",
+      "lifetimeProfit": "Lifetime profit",
+      "totalAllocated": "Allocated this range",
+      "totalDisbursed": "Total disbursed",
+      "totalAvailable": "Available balance",
+      "totalPercentageLabel": "Current rate total: {{percentage}}%"
+    },
+    "tier": {
+      "percentageLabel": "{{percentage}}% of profit",
+      "lifetimeAllocation": "Lifetime allocated",
+      "lifetimeDisbursed": "Disbursed",
+      "availableBalance": "Available",
+      "disabled": "Disabled",
+      "enable": "Enable",
+      "disable": "Disable",
+      "viewHistory": "History",
+      "viewLedger": "Detailed ledger",
+      "disburse": "Disburse",
+      "edit": "Edit",
+      "viewRates": "Rates",
+      "currentRate": "Current rate",
+      "rangeAllocationLabel": "Allocated this range",
+      "delete": "Delete",
+      "rangeProfitMissing": "No profit recorded in this range"
+
+    },
+    "form": {
+      "createTitle": "New tier",
+      "editTitle": "Edit tier",
+      "nameLabel": "Tier name",
+      "nameHelper": "You choose the name — it's shown everywhere in the app.",
+      "namePlaceholder": "e.g. Barkat Khana, Charity, Staff Bonus",
+      "percentageLabel": "Percentage of profit",
+      "percentageHelper": "Between 0 and 100. The amount updates as profit changes.",
+      "enabledLabel": "Enabled",
+      "enabledHelper": "Disabled tiers don't allocate profit going forward. History is kept."
+    },
+    "disbursement": {
+      "title": "Disburse from {{name}}",
+      "amountLabel": "Amount",
+      "amountHelper": "Available: {{amount}}",
+      "dateLabel": "Date",
+      "noteLabel": "Note",
+      "submit": "Record disbursement",
+      "recorded": "Disbursement recorded.",
+      "errors": {
+        "amountInvalid": "Amount must be greater than zero.",
+        "amountExceedsAvailable": "Amount cannot exceed the available balance of {{available}}.",
+        "dateInvalid": "Enter a valid date.",
+        "noteMax": "Note is too long.",
+        "tierDisabled": "This tier is disabled. Enable it first."
+      }
+    },
+    "history": {
+      "title": "{{name}} — history",
+      "empty": {
+        "title": "No disbursements yet",
+        "description": "Recorded disbursements from this tier will appear here."
+      },
+      "columns": {
+        "date": "Date",
+        "amount": "Amount",
+        "note": "Note"
+      }
+    },
+        "rates": {
+      "title": "{{name}} — rate history",
+      "empty": {
+        "title": "No rate changes yet",
+        "description": "Rate changes will appear here as the owner updates the percentage."
+      },
+      "columns": {
+        "from": "Effective from",
+        "percentage": "Percentage"
+      },
+      "note": "Rates apply from the moment they are set. Past allocations are never recalculated.",
+      "initial": "Initial rate"
+    },
+    "deleteConfirm": {
+      "title": "Delete this tier?",
+      "description": "This action cannot be undone. Tiers with disbursement history cannot be deleted.",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "created": "Tier added.",
+    "updated": "Tier updated.",
+    "deleted": "Tier deleted.",
+    "errors": {
+      "nameRequired": "Tier name is required.",
+      "nameMax": "Tier name is too long.",
+      "nameTaken": "A tier with this name already exists.",
+      "percentageInvalid": "Percentage must be greater than 0 and at most 100.",
+      "hasDisbursements": "This tier has disbursement history and cannot be deleted."
+    }
+  },
+  "tierLedger": {
+    "title": "{{name}} — rate history ledger",
+    "totalRow": "TOTAL",
+    "notActive": "Not active",
+    "subtitle": "How much profit earned under each rate, how much was allocated, and what's available now.",
+    "columns": {
+      "from": "Rate effective from",
+      "to": "Until",
+      "percentage": "Rate",
+      "profit": "Profit in period",
+      "allocated": "Allocated",
+      "disbursed": "Disbursed",
+      "balance": "Balance"
+    },
+    "currentWindow": "Current",
+    "summary": {
+      "totalProfit": "Total profit",
+      "totalAllocated": "Allocated",
+      "totalDisbursed": "Disbursed",
+      "available": "Available"
+    },
+    "empty": {
+      "title": "No data in this range",
+      "description": "Try a different time range."
+    },
+    "downloadCsv": "Download CSV",
+    "printPdf": "Print / Save as PDF",
+    "printSubtitle": "Rate period ledger",
+    "printBack": "Back to ledger"
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Sales, profit, and fund allocations over time.",
+    "metrics": {
+      "sales": "Total sales",
+      "profit": "Gross profit",
+      "salesCountHint": "{{count}} sales",
+      "netProfit": "Net profit after funds"
+    },
+    "sections": {
+      "trend": "Trend",
+      "breakdown": "Profit breakdown",
+      "topItems": "Top selling items",
+      "topCustomers": "Top customers"
+      
+    },
+    "trend": {
+      "salesLegend": "Sales",
+      "profitLegend": "Profit",
+      "empty": "No sales in this range.",
+      "profitTitle": "{{label}} — profit: {{profit}}, sales: {{sales}}"
+    },
+    "breakdown": {
+      "grossProfit": "Gross profit",
+      "deduction": "Less {{name}}",
+      "netProfit": "Net profit after funds",
+      "noTiers": "No active fund tiers",
+      "noTiersHint": "Create one from the Profit Fund page to see deductions here."
+    },
+    "topItems": {
+      "columns": {
+        "name": "Product",
+        "qty": "Qty",
+        "revenue": "Revenue"
+      },
+      "empty": "No sales in this range."
+    },
+    "topCustomers": {
+      "columns": {
+        "name": "Customer",
+        "salesCount": "Sales",
+        "spent": "Total spent"
+      },
+      "empty": "No attributed sales in this range."
+    },
+    "empty": {
+      "title": "No data for this range",
+      "description": "Try a different time range, or record a sale in POS."
+    }
+  },
+
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Manage the team members who can access your business.",
+    "addStaff": "Add staff member",
+    "editStaff": "Edit staff member",
+    "searchPlaceholder": "Search by name or phone",
+    "columns": {
+      "name": "Name",
+      "phone": "Phone",
+      "role": "Role",
+      "status": "Status",
+      "lastLogin": "Last login",
+      "actions": "Actions"
+    },
+    "actions": {
+      "edit": "Edit",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "delete": "Delete"
+    },
+    "badges": {
+      "you": "You",
+      "owner": "Owner"
+    },
+    "fields": {
+      "name": "Full name",
+      "phone": "Phone number",
+      "email": "Email",
+      "emailHelper": "Optional",
+      "password": "Password",
+      "passwordHelper": "At least 8 characters, including a letter and a number.",
+      "passwordEditHelper": "Leave blank to keep the current password.",
+      "confirmPassword": "Confirm password",
+      "role": "Role",
+      "roleHelper": "Manager can do most things; Cashier is POS + customers; Accountant has read-only access to financials.",
+      "active": "Active",
+      "activeHelper": "Inactive staff can't log in. Their history is kept."
+    },
+    "empty": {
+      "title": "Only you so far",
+      "description": "Add staff members to let others help run the business.",
+      "filterTitle": "No staff match your search",
+      "filterDescription": "Try a different name or phone number."
+    },
+    "deleteConfirm": {
+      "title": "Deactivate this staff member?",
+      "description": "They will no longer be able to log in. Their historical records (sales, purchases) are preserved. You can reactivate them later.",
+      "confirm": "Deactivate",
+      "cancel": "Cancel"
+    },
+    "created": "Staff member added.",
+    "updated": "Staff member updated.",
+    "deactivated": "Staff member deactivated.",
+    "lastLoginNever": "Never",
+    "errors": {
+      "nameRequired": "Name is required.",
+      "nameMax": "Name is too long.",
+      "phoneRequired": "Phone number is required.",
+      "phoneMin": "Enter a valid phone number.",
+      "phoneMax": "Phone number is too long.",
+      "phoneTaken": "This phone number is already registered.",
+      "emailInvalid": "Enter a valid email address.",
+      "emailMax": "Email is too long.",
+      "emailTaken": "This email is already registered.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordLetter": "Password must contain at least one letter.",
+      "passwordNumber": "Password must contain at least one number.",
+      "passwordMismatch": "Passwords do not match.",
+      "ownerProtected": "The owner cannot be deactivated or deleted.",
+      "selfProtected": "You cannot perform this action on your own account."
+    }
+  },
+
+  "billing": {
+    "title": "Billing",
+    "subtitle": "Manage your subscription and payment history.",
+    "subscription": {
+      "heading": "Subscription",
+      "statusLabel": "Status",
+      "planLabel": "Plan",
+      "comparePlans": "Compare all plans →",
+      "expiresLabel": "Expires",
+      "daysLeft": "{{count}} days left",
+      "dayLeft": "1 day left",
+      "expiresToday": "Expires today",
+      "expired": "Expired",
+      "notSet": "No subscription set. The app is free to use until an admin assigns a plan.",
+      "statusTrial": "Trial",
+      "statusActive": "Active",
+      "statusSuspended": "Suspended",
+      "statusExpired": "Expired",
+      "planTrial": "Trial",
+      "planBasic": "Basic",
+      "planPro": "Pro",
+      "planBusiness": "Business",
+      "renew": "Renew subscription"
+    },
+    "submit": {
+      "title": "Renew subscription",
+      "description": "Choose a plan and duration, then follow the instructions to send payment.",
+      "planLabel": "Plan",
+      "planBasic": "Basic",
+      "planPro": "Pro",
+      "planBusiness": "Business",
+      "instructionsTitle": "Where to send payment",
+      "instructionsBody": "Send {{amount}} to {{displayName}} using any of these methods, then enter the transaction ID below:",
+      "monthsLabel": "Duration",
+      "monthsOne": "1 month",
+      "monthsThree": "3 months",
+      "monthsSix": "6 months",
+      "monthsTwelve": "12 months",
+      "amountLabel": "Amount to pay",
+      "amountFormula": "{{monthly}} × {{months}} = {{total}}",
+      "methodLabel": "Payment method",
+      "methodJazzcash": "JazzCash",
+      "methodEasypaisa": "EasyPaisa",
+      "methodBank": "Bank transfer",
+      "methodOther": "Other",
+      "transactionIdLabel": "Transaction ID",
+      "transactionIdHelper": "The TID shown on your payment receipt.",
+      "paidAtLabel": "Payment date",
+      "notesLabel": "Notes",
+      "notesHelper": "Optional",
+      "submit": "Submit payment",
+      "submitted": "Payment submitted. Check history below to send your receipt via WhatsApp.",
+      "errors": {
+        "planRequired": "Choose a plan.",
+        "monthsRequired": "Choose a duration.",
+        "methodRequired": "Choose a payment method.",
+        "transactionIdRequired": "Transaction ID is required.",
+        "transactionIdMax": "Transaction ID is too long.",
+        "paidAtInvalid": "Enter a valid date.",
+        "notesMax": "Notes are too long.",
+        "tooManyPending": "You already have pending payments waiting for review. Please wait."
+      }
+    },
+    "history": {
+      "title": "Payment history",
+      "emptyTitle": "No payments yet",
+      "emptyDescription": "Your payment submissions will appear here.",
+      "statusPending": "Pending review",
+      "statusVerified": "Verified",
+      "statusRejected": "Rejected",
+      "referenceLabel": "Reference",
+      "planLabel": "Plan",
+      "amountLabel": "Amount",
+      "submittedLabel": "Submitted",
+      "paidLabel": "Paid on",
+      "transactionIdLabel": "TID",
+      "rejectionReasonLabel": "Reason",
+      "openWhatsApp": "Send receipt on WhatsApp",
+      "whatsappMessage": "Assalam-o-Alaikum,\n\nI have submitted a payment:\n\nReference: {{reference}}\nBusiness: {{businessName}}\nPlan: {{plan}} × {{months}} months\nAmount: Rs {{amount}}\n\nReceipt attached below."
+    },
+    "plans": {
+      "title": "Plans",
+      "subtitle": "Compare our plans and choose the one that fits your business.",
+      "perMonth": "per month",
+      "popular": "Most popular",
+      "choose": "Choose this plan",
+      "limitsHeading": "Limits",
+      "unlimited": "Unlimited",
+      "empty": {
+        "title": "No plans available",
+        "description": "Plans will appear here once they're published."
+      },
+      "limits": {
+        "users": "Users",
+        "products": "Products",
+        "customers": "Customers",
+        "suppliers": "Suppliers",
+        "salesPerMonth": "Sales / month"
+      }
+    }
+  },
+
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Configure how the app works for your business.",
+    "tabs": {
+      "profile": "Profile",
+      "modules": "Modules",
+      "khata": "Khata",
+      "language": "Language",
+      "roles": "Roles",
+      "export": "Export"
+    },
+    "saved": "Settings saved.",
+    "save": "Save changes",
+    "profile": {
+      "heading": "Business profile",
+      "description": "Basic information about your business.",
+      "nameLabel": "Business name",
+      "ownerNameLabel": "Owner name",
+      "phoneLabel": "Contact phone",
+      "addressLabel": "Address",
+      "addressHelper": "Optional"
+    },
+    "modules": {
+      "heading": "Enabled modules",
+      "description": "Turn off the parts of the app you don't use. Your data is preserved — you can turn them back on anytime.",
+      "labels": {
+        "pos": "Point of Sale",
+        "inventory": "Inventory",
+        "suppliers": "Suppliers",
+        "customers": "Customers",
+        "reports": "Reports",
+        "profitFund": "Profit Fund",
+        "staff": "Staff"
+      },
+      "descriptions": {
+        "pos": "Checkout, sales recording, and receipts.",
+        "inventory": "Products, stock tracking, and low-stock alerts.",
+        "suppliers": "Vendors, purchases, and what you owe them.",
+        "customers": "Customer profiles, khata ledger, and payments.",
+        "reports": "Sales, profit trends, and top items/customers.",
+        "profitFund": "Multi-tier fund allocation from profit.",
+        "staff": "Team members, roles, and access."
+      },
+      "enableAll": "Enable all",
+      "disableAll": "Disable all"
+    },
+    "khata": {
+      "heading": "Khata settings",
+      "description": "Rules for how customer credit and khata work in your business.",
+      "creditLimitEnabled": "Track credit limits",
+      "creditLimitEnabledHelper": "Set a maximum outstanding balance per customer.",
+      "defaultCreditLimit": "Default credit limit",
+      "defaultCreditLimitHelper": "Used when a customer has no individual limit set.",
+      "blockSaleOnLimitExceeded": "Block sale if credit limit is exceeded",
+      "blockSaleOnLimitExceededHelper": "When off, the sale completes but you're warned.",
+      "dueDateTrackingEnabled": "Track payment due dates",
+      "dueDateTrackingEnabledHelper": "Set a payment deadline per customer.",
+      "defaultPaymentTermsDays": "Default payment terms (days)",
+      "defaultPaymentTermsDaysHelper": "Days from sale until payment is due.",
+      "guarantorEnabled": "Capture guarantor information",
+      "guarantorEnabledHelper": "Add a guarantor name + phone per customer.",
+      "customerTagsEnabled": "Customer tags",
+      "customerTagsEnabledHelper": "Tag customers (e.g. VIP, wholesale) for quick filtering.",
+      "allowPartialPayments": "Allow partial payments",
+      "allowPartialPaymentsHelper": "Customers can pay in installments instead of full amounts.",
+      "requireCustomerPhoneForCredit": "Require phone number for credit sales",
+      "requireCustomerPhoneForCreditHelper": "Prevents khata sales without a contactable number.",
+      "reminderTemplates": "WhatsApp reminder templates",
+      "reminderTemplatesDescription": "Used when sending khata reminders. Leave a template empty to use the built-in default.",
+      "templateEnglishLabel": "English template",
+      "templateUrduLabel": "Urdu template",
+      "templatePlaceholdersHint": "Available placeholders: {{list}}",
+      "defaultReminderLanguageLabel": "Default reminder language",
+      "defaultReminderLanguageEnglish": "English",
+      "defaultReminderLanguageUrdu": "Urdu"
+    },
+    "language": {
+      "heading": "Language",
+      "description": "Set the interface language for your business. This becomes the default for new staff accounts.",
+      "currentLabel": "Current language",
+      "helper": "Change takes effect immediately. Your choice is remembered on this device.",
+      "businessDefaultDiffers": "Your business default is different. Save here to make this the default for new staff accounts.",
+      "english": "English",
+      "urdu": "Urdu"
+    },
+    "roles": {
+      "heading": "Roles & permissions",
+      "description": "What each role can do in your business. This is a reference — the permission matrix is built-in and not editable.",
+      "tableHeader": "Permission",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "errors": {
+      "nameRequired": "Business name is required.",
+      "nameMax": "Business name is too long.",
+      "ownerNameRequired": "Owner name is required.",
+      "ownerNameMax": "Owner name is too long.",
+      "phoneRequired": "Contact phone is required.",
+      "phoneMin": "Enter a valid phone number.",
+      "phoneMax": "Phone number is too long.",
+      "addressMax": "Address is too long.",
+      "lowStockThresholdInvalid": "Low stock threshold must be 0 or more.",
+      "creditLimitInvalid": "Default credit limit must be 0 or more.",
+      "paymentTermsInvalid": "Payment terms must be 0 or more.",
+      "templateTooLong": "Template is too long (max 500 characters)."
+    }
+  },
+
+  "permissions": {
+    "groups": {
+      "pos": "Point of Sale",
+      "inventory": "Inventory",
+      "suppliers": "Suppliers & Purchasing",
+      "customers": "Customers & Khata",
+      "reports": "Reports",
+      "profitFund": "Profit Fund",
+      "staff": "Staff",
+      "settings": "Settings"
+    },
+    "pos": { "access": "Use POS to record sales" },
+    "inventory": {
+      "view": "View products and stock levels",
+      "manage": "Add, edit, and archive products"
+    },
+    "suppliers": {
+      "view": "View suppliers and their purchases",
+      "manage": "Add suppliers and record purchases"
+    },
+    "customers": {
+      "view": "View customers and khata balances",
+      "manage": "Add customers and record payments"
+    },
+    "reports": {
+      "view": "Open the Reports page",
+      "viewFinancials": "See profit, fund, and financial breakdowns"
+    },
+    "profitFund": {
+      "view": "View Profit Fund tiers and balances",
+      "manage": "Create tiers and record disbursements"
+    },
+    "staff": { "manage": "Add, edit, and deactivate staff" },
+    "settings": { "manage": "Change business settings and modules" }
+  },
+
   "roles": {
     "owner": "Owner",
     "manager": "Manager",
     "cashier": "Cashier",
     "accountant": "Accountant"
   },
-  "auth": {
-    "appName": "Business Manager",
-    "loginTitle": "Log in to your account",
-    "identifierLabel": "Phone or email",
-    "passwordLabel": "Password",
-    "loginButton": "Log in",
-    "loginError": "Invalid phone/email or password.",
-    "registerTitle": "Create your business account",
-    "registerButton": "Create account",
-    "logoutConfirm": "Are you sure you want to log out?",
-    "noAccount": "Don't have an account?",
-    "createAccountLink": "Create one",
-    "businessNameLabel": "Business name",
-    "ownerNameLabel": "Your name",
-    "phoneLabel": "Phone number",
-    "emailLabel": "Email",
-    "emailHelper": "Optional",
-    "confirmPasswordLabel": "Confirm password",
-    "passwordHint": "At least 8 characters, including a letter and a number.",
-    "haveAccount": "Already have an account?",
-    "loginLink": "Log in"
+
+  "admin": {
+        "settings": {
+      "title": "Platform settings",
+      "subtitle": "Platform-wide configuration applied to new signups.",
+      "saved": "Settings saved.",
+      "trialHeading": "Free trial",
+      "trialDescription": "Configure the trial offered to new businesses at signup. Changes apply only to future signups.",
+      "trialEnabledLabel": "Enable free trial",
+      "trialEnabledHelper": "When off, new businesses have no access until an admin grants a subscription.",
+      "trialDaysLabel": "Trial length (days)",
+      "trialDaysHelper": "Between 1 and 90 days. Applied at register time.",
+      "trialWarningDaysLabel": "Warn before expiry (days)",
+      "trialWarningDaysHelper": "Show a renewal banner to the owner this many days before expiry. 0 disables the banner.",
+      "supportHeading": "Support channels",
+      "supportDescription": "Shown on the blocked screen and used in bulk WhatsApp messages.",
+      "supportWhatsAppLabel": "Support WhatsApp number",
+      "supportWhatsAppHelper": "Digits only, no + or spaces. e.g. 923001234567",
+      "supportEmailLabel": "Support email",
+      "supportEmailHelper": "Optional. Leave empty to hide the email hint.",
+      "blockedHeading": "Blocked screen overrides",
+      "blockedDescription": "When empty, the blocked screen uses built-in translated text.",
+      "blockedTitleLabel": "Custom title",
+      "blockedDescLabel": "Custom description",
+      "blockedOverrideHelper": "Leave empty to use the default.",
+      "bulkHeading": "Bulk WhatsApp template",
+      "bulkDescription": "Used by the Send Reminders action on the tenants page.",
+      "bulkTemplateLabel": "Message template",
+      "bulkPlaceholdersHint": "Available placeholders: {ownerName}, {businessName}, {expiryDate}, {renewalUrl}",
+      "errors": {
+        "trialDaysInvalid": "Trial days must be a whole number between 1 and 90.",
+        "trialWarningDaysInvalid": "Warning days must be a whole number between 0 and 30.",
+        "supportEmailInvalid": "Enter a valid email address.",
+        "bulkTemplateRequired": "The reminder template cannot be empty.",
+        "bulkTemplateTooLong": "Template is too long (max 500 characters)."
+      }
+    },
+    "login": {
+      "title": "Admin Console",
+      "subtitle": "Platform operator sign in",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign in",
+      "error": "Invalid email or password."
+    },
+      "header": {
+      "brand": "Admin Console",
+      "viewSite": "View app",
+      "payments": "Payments",
+      "plans": "Plans",
+      "settings": "Settings",
+      "logout": "Log out"
+    },
+    "tenants": {
+      "title": "Tenants",
+      "subtitle": "Businesses on the platform.",
+      "searchPlaceholder": "Search by name, owner, or phone",
+      "oneDayAgo": "1 day ago",
+      
+      "columns": {
+        "name": "Business",
+        "owner": "Owner",
+        "phone": "Phone",
+        "subscription": "Status",
+        "daysLeft": "Days left",
+        "created": "Signed up",
+        "actions": "Actions"
+      },
+      "bulk": {
+        "selected": "{{count}} selected",
+        "selectAll": "Select all on page",
+        "clearSelection": "Clear selection",
+        "sendReminders": "Send WhatsApp reminders",
+        "title": "Send WhatsApp reminders",
+        "progress": "{{current}} of {{total}}",
+        "sentCount": "Sent: {{count}}",
+        "expiresOn": "Expires",
+        "previewLabel": "Message preview",
+        "helper": "WhatsApp will open in a new tab. Tap Send there, then come back here and click Next.",
+        "open": "Open WhatsApp",
+        "skip": "Skip",
+        "restart": "Start over",
+        "doneTitle": "Done — sent to {{count}}",
+        "doneDescription": "All selected tenants have been processed."
+      },
+      "status": {
+        "trial": "Trial",
+        "active": "Active",
+        "suspended": "Suspended",
+        "expired": "Expired",
+        "none": "Not set"
+      },
+      "view": "View",
+      "daysLeft": "{{count}} days left",
+      "oneDay": "1 day left",
+      "endsToday": "Ends today",
+      "daysAgo": "{{count}} days ago",
+      "filters": {
+        "statusAll": "All",
+        "statusTrial": "Trial",
+        "statusActive": "Active",
+        "statusExpired": "Expired",
+        "statusSuspended": "Suspended",
+        "signupAll": "Any signup",
+        "signupToday": "Today",
+        "signupWeek": "This week",
+        "signupMonth": "This month",
+        "expiringSoon": "⚠ Expiring soon",
+        "clear": "Clear filters"
+      },
+      "empty": {
+        "title": "No tenants yet",
+        "description": "Businesses will appear here as they register.",
+        "filterTitle": "No tenants match your search",
+        "filterDescription": "Try a different name, owner, or phone."
+      }
+    },
+    "tenantDetail": {
+      "back": "Back to tenants",
+      "createdOn": "Created {{date}}",
+      "counts": {
+        "users": "Users",
+        "products": "Products",
+        "suppliers": "Suppliers",
+        "purchases": "Purchases",
+        "customers": "Customers",
+        "sales": "Sales"
+      },
+      "subscription": {
+        "heading": "Subscription",
+        "status": "Status",
+        "plan": "Plan",
+        "startedAt": "Started",
+        "expiresAt": "Expires",
+        "daysLeft": "{{count}} days left",
+        "expired": "Expired",
+        "notSet": "No subscription set — the tenant can use the app freely.",
+        "suspendReason": "Suspended: {{reason}}"
+      },
+      "actions": {
+        "suspend": "Suspend",
+        "activate": "Activate",
+        "grant": "Grant / renew",
+        "resetPassword": "Reset owner password",
+        "impersonate": "Impersonate owner"
+      },
+      "suspend": {
+        "title": "Suspend this tenant?",
+        "description": "All users of this business will be signed out and blocked from logging in. Data is preserved.",
+        "reasonLabel": "Reason (optional)",
+        "reasonPlaceholder": "e.g. Non-payment",
+        "confirm": "Suspend",
+        "cancel": "Cancel"
+      },
+      "grant": {
+        "title": "Grant / renew subscription",
+        "description": "Extends access for the chosen duration. If a subscription is already active, the new period starts at the current expiry.",
+        "monthsLabel": "Duration (months)",
+        "planLabel": "Plan",
+        "planTrial": "Trial",
+        "planBasic": "Basic",
+        "planPro": "Pro",
+        "planBusiness": "Business",
+        "notesLabel": "Notes (optional)",
+        "confirm": "Grant access",
+        "cancel": "Cancel"
+      },
+      "resetPassword": {
+        "title": "Reset owner password",
+        "description": "Sets a new password for this tenant's owner. Share it with them securely.",
+        "passwordLabel": "New password",
+        "passwordHelper": "At least 8 characters, including a letter and a number.",
+        "confirmPasswordLabel": "Confirm new password",
+        "mismatch": "Passwords do not match.",
+        "confirm": "Reset password",
+        "cancel": "Cancel"
+      },
+      "impersonate": {
+        "title": "Impersonate this business?",
+        "description": "You will be signed in as the owner for 30 minutes. Your admin session stays active — you can exit impersonation from the banner at any time. This action is logged.",
+        "confirm": "Impersonate",
+        "cancel": "Cancel"
+      },
+      "saved": "Saved.",
+      "suspended": "Tenant suspended.",
+      "activated": "Tenant activated.",
+      "granted": "Subscription updated.",
+      "passwordReset": "Owner password reset.",
+      "impersonating": "Impersonation started."
+    },
+    "payments": {
+      "title": "Payments",
+      "subtitle": "Verify subscription payments from businesses.",
+      "tabs": {
+        "pending": "Pending",
+        "verified": "Verified",
+        "rejected": "Rejected",
+        "all": "All"
+      },
+      "columns": {
+        "reference": "Reference",
+        "business": "Business",
+        "plan": "Plan",
+        "amount": "Amount",
+        "method": "Method",
+        "paidOn": "Paid on",
+        "submitted": "Submitted",
+        "status": "Status"
+      },
+      "status": {
+        "pending": "Pending",
+        "verified": "Verified",
+        "rejected": "Rejected"
+      },
+      "methods": {
+        "jazzcash": "JazzCash",
+        "easypaisa": "EasyPaisa",
+        "bank": "Bank transfer",
+        "other": "Other"
+      },
+      "view": "View",
+      "empty": {
+        "title": "No payments",
+        "description": "Payments submitted by businesses will appear here.",
+        "pendingTitle": "No pending payments",
+        "pendingDescription": "You're all caught up.",
+        "filterTitle": "No payments in this view"
+      },
+      "detail": {
+        "title": "Payment {{reference}}",
+        "businessLabel": "Business",
+        "ownerLabel": "Owner",
+        "ownerPhoneLabel": "Phone",
+        "planLabel": "Plan × months",
+        "amountLabel": "Amount",
+        "methodLabel": "Method",
+        "transactionIdLabel": "Transaction ID",
+        "paidOnLabel": "Paid on",
+        "submittedLabel": "Submitted",
+        "notesLabel": "Customer notes",
+        "statusLabel": "Status",
+        "rejectionReasonLabel": "Rejection reason",
+        "verifiedByLabel": "Verified by",
+        "verifiedAtLabel": "Verified at",
+        "verify": "Verify & grant",
+        "reject": "Reject",
+        "close": "Close",
+        "openWhatsApp": "Open WhatsApp chat with customer"
+      },
+      "rejectModal": {
+        "title": "Reject this payment?",
+        "description": "The customer will see this reason on their billing page.",
+        "reasonLabel": "Reason",
+        "reasonPlaceholder": "e.g. Transaction ID not found",
+        "confirm": "Reject",
+        "cancel": "Cancel"
+      },
+      "verifyModal": {
+        "title": "Verify this payment?",
+        "description": "Verifying will grant {{months}} months of {{plan}} to the tenant. This action is logged.",
+        "confirm": "Verify & grant",
+        "cancel": "Cancel"
+      },
+      "verifiedToast": "Payment verified. Subscription extended.",
+      "rejectedToast": "Payment rejected."
+    },
+    "plans": {
+      "title": "Subscription plans",
+      "subtitle": "Manage plan tiers, pricing, and feature limits.",
+      "addPlan": "New plan",
+      "columns": {
+        "name": "Plan",
+        "slug": "Slug",
+        "price": "Price",
+        "limits": "Limits",
+        "order": "Order",
+        "actions": "Actions"
+      },
+      "badges": {
+        "trial": "Trial",
+        "inactive": "Inactive"
+      },
+      "empty": "No plans yet.",
+      "created": "Plan created.",
+      "updated": "Plan updated.",
+      "deleted": "Plan deleted.",
+      "deleteConfirm": {
+        "title": "Delete this plan?",
+        "description": "This cannot be undone. Plans currently in use by any business cannot be deleted."
+      },
+      "form": {
+        "createTitle": "New plan",
+        "editTitle": "Edit plan",
+        "slugLabel": "Slug",
+        "slugHelper": "Lowercase letters, numbers, or dashes. Used internally.",
+        "slugLockedHelper": "Slugs are locked on the trial plan.",
+        "nameLabel": "Display name",
+        "priceLabel": "Monthly price (Rs)",
+        "priceHelper": "0 for free plans. Whole rupees only.",
+        "descriptionLabel": "Short description",
+        "featuresLabel": "Features",
+        "featuresHelper": "One per line. Shown on the comparison page.",
+        "limitsLabel": "Limits",
+        "limitsHelper": "Use -1 for unlimited. Enter a whole number for a cap.",
+        "limitUsers": "Users",
+        "limitProducts": "Products",
+        "limitCustomers": "Customers",
+        "limitSuppliers": "Suppliers",
+        "limitSales": "Sales / month",
+        "orderLabel": "Display order",
+        "orderHelper": "Lower numbers appear first.",
+        "activeLabel": "Active",
+        "activeHelper": "Inactive plans are hidden from customers but stay editable.",
+        "errors": {
+          "slugInvalid": "Slug must be 2-30 characters.",
+          "slugCharset": "Slug may only contain lowercase letters, numbers, and dashes.",
+          "slugTaken": "A plan with this slug already exists.",
+          "nameInvalid": "Display name must be 2-50 characters.",
+          "priceInvalid": "Price must be a whole number, 0 or more.",
+          "limitsInvalid": "Every limit must be a whole number, -1 (unlimited), or 0.",
+          "trialSlugLocked": "The trial plan's slug cannot be changed."
+        }
+      },
+      "errors": {
+        "inUse": "This plan is in use by {{count}} business(es) and cannot be deleted.",
+        "trialProtected": "The trial plan cannot be deleted."
+      }
+    },
+    "impersonationBanner": {
+      "text": "You are impersonating {{businessName}}.",
+      "exit": "Exit impersonation"
+    },
+    "actions": {
+      "title": "Audit log",
+      "subtitle": "Every action taken by platform admins.",
+      "columns": {
+        "when": "When",
+        "admin": "Admin",
+        "action": "Action",
+        "target": "Tenant",
+        "details": "Details"
+      },
+      "types": {
+        "adminLogin": "Admin signed in",
+        "adminLogout": "Admin signed out",
+        "tenantSuspend": "Tenant suspended",
+        "tenantActivate": "Tenant activated",
+        "tenantDelete": "Tenant deleted",
+        "tenantGrant": "Subscription granted",
+        "tenantImpersonate": "Impersonation started",
+        "tenantResetOwnerPassword": "Owner password reset",
+        "paymentVerify": "Payment verified",
+        "paymentReject": "Payment rejected",
+        "planCreate": "Plan created",
+        "planUpdate": "Plan updated",
+        "planDelete": "Plan deleted",
+        "platformSettingsUpdate": "Platform settings updated"
+      },
+      "empty": {
+        "title": "No actions yet",
+        "description": "Admin actions will appear here as they happen."
+      }
+    }
   },
+  "export": {
+    "title": "Export your data",
+    "subtitle": "Download CSV files or open a printable view. Every file contains only your business's data.",
+    "snapshotHeading": "Snapshot exports",
+    "snapshotDescription": "Current state of your data — no date range needed.",
+    "rangeHeading": "Date range",
+    "rangeDescription": "Applied to sales and khata ledger below.",
+    "rangeBasedHeading": "Range-based exports",
+    "rangeBasedDescription": "Only records in the selected date range are included.",
+    "printHeading": "Print / Save as PDF",
+    "printDescription": "Open a printable view of your data. From the print dialog on any phone, tablet, or computer, choose 'Save as PDF' to keep a file.",
+    "productsLabel": "Products",
+    "productsDescription": "Product catalog with stock, cost, and sell prices.",
+    "customersLabel": "Customers",
+    "customersDescription": "Customer list with contact info and current balances.",
+    "suppliersLabel": "Suppliers",
+    "suppliersDescription": "Vendor list with contact info and amounts owed.",
+    "salesLabel": "Sales",
+    "salesDescription": "Every sale in the selected range with totals and profit.",
+    "ledgerLabel": "Khata ledger",
+    "ledgerDescription": "All customer ledger entries in the selected range.",
+    "downloadCsv": "Download CSV",
+    "openPrint": "Open print view",
+    "printTitle": "Full business report",
+    "printSubtitle": "All datasets in one document — Products, Customers, Suppliers, Sales, and Ledger.",
+    "printHint": "Opens in a new tab. Use the 'Save as PDF' option in the print dialog to keep a copy.",
+    "errors": {
+      "customRangeRequired": "Please enter both From and To dates for a custom range."
+    }
+  },
+
+  "exportPrint": {
+    "backToSettings": "Back to settings",
+    "printButton": "Print / Save as PDF",
+    "generated": "Generated",
+    "rangeLabel": "Range",
+    "products": "Products",
+    "customers": "Customers",
+    "suppliers": "Suppliers",
+    "sales": "Sales",
+    "ledger": "Khata ledger",
+    "noData": "No data to display."
+  },
+  "whatsapp": {
+    "reminderTitle": "Send reminder",
+    "languageLabel": "Message language",
+    "languageEnglish": "English",
+    "languageUrdu": "Urdu",
+    "phoneLabel": "Sending to",
+    "previewLabel": "Message preview",
+    "send": "Open WhatsApp",
+    "sent": "Opened in WhatsApp — tap send there.",
+    "invalidPhone": "This customer's phone number can't be used with WhatsApp. Update it first.",
+    "noTemplate": "No reminder template is set. You can add one in Settings.",
+    "messagePlaceholdersTitle": "Available placeholders",
+    "messagePlaceholdersHint": "Use these in your template: {{list}}"
+  },
+
+   "subscriptionBlocked": {
+    "suspended": {
+      "title": "Access suspended",
+      "description": "Your account has been temporarily suspended. Please contact support to resolve this."
+    },
+    "expired": {
+      "title": "Subscription expired",
+      "description": "Your subscription has expired. Renew to continue using the app."
+    },
+    "renewCta": "Renew subscription",
+    "contactSupport": "Contact support",
+    "emailHint": "Or email us at {{email}}"
+  },
+  "trialWarning": {
+    "today": "Your trial ends today",
+    "tomorrow": "Your trial ends tomorrow",
+    "daysLeft": "Your trial ends in {{count}} days",
+    "renewCta": "Renew now"
+  },
+  "header": {
+    "accountMenuLabel": "Account menu",
+    "signedInAs": "Signed in as"
+  },
+
+  "language": {
+    "en": "English",
+    "ur": "Urdu",
+    "switchTo": "Switch language"
+  },
+
   "errors": {
     "generic": "Something went wrong. Please try again.",
     "unauthorized": "You need to log in to continue.",
@@ -297,40 +1500,7 @@
     "passwordNumber": "Password must contain at least one number.",
     "passwordMismatch": "Passwords do not match.",
     "phoneTaken": "This phone number is already registered.",
-    "emailTaken": "This email is already registered."
-  },
-  "dashboard": {
-    "rangeLabel": "Time range",
-    "ranges": {
-      "today": "Today",
-      "week": "Last 7 days",
-      "month": "This month",
-      "year": "This year",
-      "custom": "Custom",
-      "from": "From",
-      "to": "To",
-      "apply": "Apply"
-    },
-    "metrics": {
-      "sales": "Sales",
-      "profit": "Profit",
-      "receivables": "Receivables",
-      "receivablesHint": "{{count}} customers owe",
-      "lowStock": "Low stock items"
-    },
-    "topItems": "Top selling items",
-    "topItemsQty": "{{count}} sold",
-    "empty": {
-      "welcomeTitle": "Welcome to Business Manager",
-      "welcomeDescription": "Get started by adding your first product to the inventory.",
-      "addProduct": "Add product",
-      "noSalesTitle": "No sales in this period",
-      "noSalesDescription": "Try a different time range, or record a sale in POS."
-    }
-  },
-  "language": {
-    "en": "English",
-    "ur": "Urdu",
-    "switchTo": "Switch language"
+    "emailTaken": "This email is already registered.",
+    "limitReached": "You've reached the {{resource}} limit for your plan ({{current}} of {{limit}}). Upgrade to add more."
   }
 }

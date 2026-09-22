@@ -10,6 +10,7 @@ import {
   LayoutDashboard,
   Package,
   PiggyBank,
+  CreditCard,
   Settings as SettingsIcon,
   ShoppingCart,
   Truck,
@@ -32,6 +33,7 @@ export type NavItemKey =
   | "reports"
   | "profitFund"
   | "staff"
+  | "billing"
   | "settings";
 
 export interface NavItem {
@@ -117,6 +119,16 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: UserCog,
     requiredModule: "staff",
     requiredPermission: "staff.manage",
+  },
+    {
+    key: "billing",
+    href: "/billing",
+    translationKey: "nav.billing",
+    icon: CreditCard,
+    // Not a tenant module — this is platform-level billing, always
+    // present. Gated purely by the settings.manage permission (owner only).
+    requiredModule: null,
+    requiredPermission: "settings.manage",
   },
   {
     key: "settings",

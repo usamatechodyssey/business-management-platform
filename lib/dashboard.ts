@@ -59,8 +59,15 @@ function parseIsoDateOnly(
   if (month < 0 || month > 11 || date < 1 || date > 31) return null;
   return { year, month, date };
 }
-
-const VALID_PRESETS: RangePreset[] = ["today", "week", "month", "year", "custom"];
+const VALID_PRESETS: RangePreset[] = [
+  "today",
+  "week",
+  "month",
+  "quarter",
+  "halfYear",
+  "year",
+  "custom",
+];
 
 export function resolveRange(
   preset: string | undefined,
@@ -98,6 +105,17 @@ export function resolveRange(
     // Last 7 days inclusive of today.
     [fromMs] = pktDayBounds(year, month, date - 6);
     [, toMs] = pktDayBounds(year, month, date);
+  } else if (safePreset === "quarter") {
+    // Last 3 months inclusive of the current month.
+    // Start = 1st of the month 2 months back (e.g. today in May → Mar 1).
+    // End   = last day of the current month.
+    [fromMs] = pktDayBounds(year, month - 2, 1);
+    [, toMs] = pktDayBounds(year, month + 1, 0);
+  } else if (safePreset === "halfYear") {
+    // Last 6 months inclusive of the current month.
+    // Start = 1st of the month 5 months back (e.g. today in Jun → Jan 1).
+    [fromMs] = pktDayBounds(year, month - 5, 1);
+    [, toMs] = pktDayBounds(year, month + 1, 0);
   } else if (safePreset === "year") {
     [fromMs] = pktDayBounds(year, 0, 1);
     [, toMs] = pktDayBounds(year, 11, 31);

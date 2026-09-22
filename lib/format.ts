@@ -6,12 +6,32 @@ export function formatCurrency(amount: number): string {
   return `${RUPEE_SIGN} ${withCommas}`;
 }
 
-export function formatDate(dateInput: string | Date, locale: "en" | "ur" = "en"): string {
+export function formatDate(
+  dateInput: string | Date,
+  locale: "en" | "ur" = "en"
+): string {
   const date = typeof dateInput === "string" ? new Date(dateInput) : dateInput;
   return date.toLocaleDateString(locale === "ur" ? "ur-PK" : "en-PK", {
     day: "2-digit",
     month: "short",
     year: "numeric",
+  });
+}
+
+// Same as formatDate but includes the time of day. Used where the exact
+// moment matters — e.g. rate history where multiple changes can occur on
+// the same calendar day.
+export function formatDateTime(
+  dateInput: string | Date,
+  locale: "en" | "ur" = "en"
+): string {
+  const date = typeof dateInput === "string" ? new Date(dateInput) : dateInput;
+  return date.toLocaleString(locale === "ur" ? "ur-PK" : "en-PK", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   });
 }
 

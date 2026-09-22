@@ -266,7 +266,7 @@ export function SuppliersClient({
       <div className="rounded-xl border border-border bg-surface p-3">
         <div className="relative">
           <Search
-            className="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted"
+            className="pointer-events-none absolute inset-s-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted"
             aria-hidden="true"
           />
           <input
@@ -282,7 +282,7 @@ export function SuppliersClient({
               type="button"
               onClick={() => setSearchInput("")}
               aria-label={translate(dictionary, "inventory.filters.clear")}
-              className="absolute end-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-text-muted transition-colors hover:bg-surface-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="absolute inset-e-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-text-muted transition-colors hover:bg-surface-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <X className="h-4 w-4" aria-hidden="true" />
             </button>

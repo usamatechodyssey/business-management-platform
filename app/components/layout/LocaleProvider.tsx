@@ -2,7 +2,14 @@
 "use client";
 
 import { createContext, useContext, type ReactNode } from "react";
+import { installApiFetchInterceptor } from "@/lib/api-fetch";
 import type { Dictionary, Locale } from "@/lib/i18n";
+
+// Install the global 401 interceptor once, at module import time.
+// LocaleProvider is mounted at the root layout and loaded on every
+// page, so this is the earliest safe client-side hook in the app.
+// Idempotent — safe across HMR reloads and repeated imports.
+installApiFetchInterceptor();
 
 interface LocaleContextValue {
   locale: Locale;

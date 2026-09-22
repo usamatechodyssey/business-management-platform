@@ -1,4 +1,4 @@
-// components/ui/Table.tsx
+// app/components/ui/Table.tsx
 "use client";
 
 import type { ReactNode } from "react";
@@ -6,7 +6,11 @@ import { Loader } from "./Loader";
 import { EmptyState } from "./EmptyState";
 
 export interface TableColumn<T> {
-  key: keyof T & string;
+  // Free-form key — used as the React list key and as a fallback
+  // accessor when `render` is not provided. When a column renders custom
+  // content (icons, badges, actions), the key can be any unique string
+  // (e.g. "actions") rather than a property name of T.
+  key: string;
   header: string;
   align?: "start" | "center" | "end";
   render?: (row: T) => ReactNode;
@@ -20,7 +24,10 @@ interface TableProps<T> {
   emptyMessage?: string;
 }
 
-const ALIGN_CLASSES: Record<NonNullable<TableColumn<unknown>["align"]>, string> = {
+const ALIGN_CLASSES: Record<
+  NonNullable<TableColumn<unknown>["align"]>,
+  string
+> = {
   start: "text-start",
   center: "text-center",
   end: "text-end",
@@ -70,9 +77,14 @@ export function Table<T>({
               {columns.map((column) => (
                 <td
                   key={column.key}
-                  className={["px-4 py-3 text-foreground", ALIGN_CLASSES[column.align ?? "start"]].join(" ")}
+                  className={[
+                    "px-4 py-3 text-foreground",
+                    ALIGN_CLASSES[column.align ?? "start"],
+                  ].join(" ")}
                 >
-                  {column.render ? column.render(row) : String(row[column.key])}
+                  {column.render
+                    ? column.render(row)
+                    : String((row as Record<string, unknown>)[column.key] ?? "")}
                 </td>
               ))}
             </tr>

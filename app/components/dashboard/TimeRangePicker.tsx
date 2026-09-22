@@ -11,12 +11,27 @@ interface TimeRangePickerProps {
   from?: string;
   to?: string;
   dictionary: Dictionary;
+   // Where the picker pushes to on change. Defaults to the dashboard so
+  // existing callers don't need updating.
+  basePath?: string;
 }
 
-const PRESETS: { key: RangePreset; labelKey: "dashboard.ranges.today" | "dashboard.ranges.week" | "dashboard.ranges.month" | "dashboard.ranges.year" | "dashboard.ranges.custom" }[] = [
+const PRESETS: {
+  key: RangePreset;
+  labelKey:
+    | "dashboard.ranges.today"
+    | "dashboard.ranges.week"
+    | "dashboard.ranges.month"
+    | "dashboard.ranges.quarter"
+    | "dashboard.ranges.halfYear"
+    | "dashboard.ranges.year"
+    | "dashboard.ranges.custom";
+}[] = [
   { key: "today", labelKey: "dashboard.ranges.today" },
   { key: "week", labelKey: "dashboard.ranges.week" },
   { key: "month", labelKey: "dashboard.ranges.month" },
+  { key: "quarter", labelKey: "dashboard.ranges.quarter" },
+  { key: "halfYear", labelKey: "dashboard.ranges.halfYear" },
   { key: "year", labelKey: "dashboard.ranges.year" },
   { key: "custom", labelKey: "dashboard.ranges.custom" },
 ];
@@ -26,6 +41,7 @@ export function TimeRangePicker({
   from,
   to,
   dictionary,
+  basePath = "/dashboard",
 }: TimeRangePickerProps) {
   const router = useRouter();
   const [showCustom, setShowCustom] = useState(preset === "custom");
@@ -39,7 +55,7 @@ export function TimeRangePicker({
       params.set("from", cf);
       params.set("to", ct);
     }
-    router.push(`/dashboard?${params.toString()}`);
+    router.push(`${basePath}?${params.toString()}`);
   }
 
   function handlePresetClick(key: RangePreset) {

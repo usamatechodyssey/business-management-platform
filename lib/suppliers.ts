@@ -8,11 +8,11 @@
 // three collections (purchases, products, suppliers — plus supplierPayments
 // for payments). They run inside MongoDB multi-document transactions so a
 // partial application can never leave stock or owed totals inconsistent.
-// MongoDB Atlas (all tiers, including free M0) is a replica set, so this
-// works everywhere this app is deployed.
+// The withTransaction + ValidationError helpers now live in
+// lib/mongo-transaction.ts so lib/sales.ts can reuse them.
 
-import { getClient, getDb } from "@/lib/db";
-import type { ClientSession } from "mongodb";
+import { getDb } from "@/lib/db";
+import { withTransaction, ValidationError } from "@/lib/mongo-transaction";
 import type {
   Product,
   Purchase,
@@ -20,39 +20,6 @@ import type {
   Supplier,
   SupplierPayment,
 } from "@/types";
-
-// ── Transaction + validation helpers ────────────────────────────
-
-async function withTransaction<T>(
-  fn: (session: ClientSession) => Promise<T>
-): Promise<T> {
-  const client = await getClient();
-  const session = client.startSession();
-  try {
-    const result = await session.withTransaction(() => fn(session), {
-      readConcern: { level: "snapshot" },
-      writeConcern: { w: "majority" },
-    });
-    if (result === undefined) {
-      // withTransaction returns undefined only if it aborted without
-      // running the callback — shouldn't happen given our usage.
-      throw new Error("Transaction aborted without a result.");
-    }
-    return result;
-  } finally {
-    await session.endSession();
-  }
-}
-
-// Thrown by transactional callbacks to abort the transaction on a
-// business-rule failure (missing supplier, over-payment, etc.). Caught
-// by the public function and mapped to a discriminated-union error.
-class ValidationError extends Error {
-  constructor(public readonly code: string) {
-    super(code);
-    this.name = "ValidationError";
-  }
-}
 
 function escapeRegex(input: string): string {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -198,7 +165,8 @@ export type CreatePurchaseResult =
 export async function createPurchase(
   input: CreatePurchaseInput
 ): Promise<CreatePurchaseResult> {
-  const { businessId, supplierId, items, date, invoiceNo, initialPayment } = input;
+  const { businessId, supplierId, items, date, invoiceNo, initialPayment } =
+    input;
 
   try {
     const purchase = await withTransaction(async (session) => {

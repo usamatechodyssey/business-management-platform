@@ -39,8 +39,22 @@ body {
   min-height: 100vh;
 }
 
+/* Noto Nastaliq Urdu is a descent-heavy script. Its glyphs extend both
+   well above (kaaf, alif, laam's verticals) and well below (nukte, ی, ج
+   tails) the standard content box, so we open up the line box for RTL. */
 html[dir="rtl"] body {
   font-family: var(--font-urdu), var(--font-sans);
+  line-height: 2.4;
+}
+
+/* `.truncate` sets overflow:hidden, which clips anything that extends
+   beyond the content box. In RTL that clips Nastaliq's ascenders and
+   descenders. Adding symmetrical padding inside the clipped box gives
+   the glyphs the room they need without changing layout around them.
+   Sized in `em` so it scales with the font-size of the element. */
+html[dir="rtl"] .truncate {
+  padding-top: 0.3em;
+  padding-bottom: 0.4em;
 }
 
 * {
@@ -49,4 +63,52 @@ html[dir="rtl"] body {
 
 input, select, textarea, button {
   font-family: inherit;
+}
+
+/* ── Print page ────────────────────────────────────────────────
+   The /print/settings page lives outside the (dashboard) shell, so
+   we only need to define print-specific layout rules. The on-screen
+   preview uses the same markup. */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  /* Hide on-screen controls (back link, print button) */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset body chrome for print */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Keep each section from being split awkwardly across pages */
+  .print-section {
+    break-inside: avoid;
+  }
+
+  /* Force section headers to stay with their table */
+  .print-section h2 {
+    break-after: avoid;
+  }
+
+  /* Denser typography to fit more rows per page */
+  .print-table {
+    font-size: 10pt;
+  }
+  .print-table th,
+  .print-table td {
+    padding: 3pt 5pt;
+  }
+
+  /* Full width content, no screen padding */
+  .print-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
 }

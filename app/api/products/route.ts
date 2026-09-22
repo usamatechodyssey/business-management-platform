@@ -6,8 +6,8 @@
 //
 // Field-level validation lives client-side (ProductFormModal) with the
 // user's locale; server-side Zod is a security backstop whose English
-// messages are never surfaced. Cross-cutting checks (code uniqueness)
-// return a translatable `code`.
+// messages are never surfaced. Cross-cutting checks (code uniqueness,
+// plan limit) return a translatable `code`.
 
 import { NextRequest } from "next/server";
 import { z } from "zod";
@@ -15,6 +15,8 @@ import { apiSuccess, apiError } from "@/lib/api-response";
 import { parseJsonBody } from "@/lib/validate";
 import { requireTenant } from "@/lib/tenant";
 import { hasPermission } from "@/lib/permissions";
+import { checkResourceLimit } from "@/lib/limits";
+import { requireActiveTenant } from "@/lib/subscription-guard";
 import {
   insertProduct,
   isProductCodeTaken,
@@ -32,7 +34,6 @@ function parsePositiveInt(value: string | null): number | undefined {
   return Math.floor(n);
 }
 
-// Client sends "" for optional fields; treat as "not provided".
 const emptyToUndefined = (value: unknown): unknown => {
   if (typeof value !== "string") return value;
   const trimmed = value.trim();
@@ -97,12 +98,29 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const tenantResult = await requireTenant();
+  const tenantResult = await requireActiveTenant();
   if (!tenantResult.success) return tenantResult.response;
   const { tenant } = tenantResult;
 
   if (!hasPermission(tenant.role, "inventory.manage")) {
     return apiError("You don't have permission to do this.", 403);
+  }
+
+  // Plan-limit gate. Runs before insert so a limit-hit leaves no trace.
+  const limit = await checkResourceLimit(tenant.businessId, "products");
+  if (!limit.allowed) {
+    return apiError(
+      "You've reached the product limit for your plan.",
+      403,
+      {
+        code: "LIMIT_REACHED",
+        fields: {
+          resource: "products",
+          current: String(limit.current),
+          limit: String(limit.limit),
+        },
+      }
+    );
   }
 
   const parsed = await parseJsonBody(req, createProductSchema);

@@ -3,17 +3,8 @@
 // POST /api/businesses — business onboarding (register flow).
 // Creates a new Business (tenant) and its first User (role: "owner") in
 // one request, then issues a session cookie so the caller is immediately
-// logged in. Login identifiers (phone, email) must be globally unique
-// across ALL tenants, not scoped — that's the whole point of the
-// uniqueness check below.
-//
-// Field-level validation (lengths, formats) lives on the client
-// (RegisterForm.tsx) using the user's locale. The server's Zod schema
-// stays as a security backstop, but its English messages are never shown
-// to the user: any Zod failure that slips through returns a generic
-// "errors.generic" on the client. Only cross-cutting checks that the
-// client cannot know about (uniqueness across tenants) return a
-// translatable `code`.
+// logged in. If the platform has trials enabled, seeds a trial
+// subscription starting now.
 
 import { NextRequest } from "next/server";
 import { z } from "zod";
@@ -22,6 +13,12 @@ import { apiSuccess, apiError } from "@/lib/api-response";
 import { parseJsonBody } from "@/lib/validate";
 import { hashPassword, createSessionToken, setSessionCookie } from "@/lib/auth";
 import { getLocale } from "@/lib/i18n-server";
+import {
+  DEFAULT_REMINDER_TEMPLATE_ENGLISH,
+  DEFAULT_REMINDER_TEMPLATE_URDU,
+} from "@/lib/whatsapp";
+import { getPlatformSettings } from "@/lib/platform-settings";
+import { buildTrialSubscription } from "@/lib/trial";
 import type {
   Business,
   BusinessSettings,
@@ -104,8 +101,8 @@ export async function POST(req: NextRequest) {
     customerTagsEnabled: false,
     allowPartialPayments: true,
     requireCustomerPhoneForCredit: false,
-    reminderTemplateUrdu: "",
-    reminderTemplateEnglish: "",
+    reminderTemplateUrdu: DEFAULT_REMINDER_TEMPLATE_URDU,
+    reminderTemplateEnglish: DEFAULT_REMINDER_TEMPLATE_ENGLISH,
     defaultReminderLanguage: "ur",
   };
 
@@ -125,6 +122,14 @@ export async function POST(req: NextRequest) {
     settings,
     createdAt: now,
   };
+
+  // Auto-trial: read platform config at register time so an admin
+  // change to trialDays takes effect on the next signup — existing
+  // trials are unaffected.
+  const platform = await getPlatformSettings();
+  if (platform.trialEnabled && platform.trialDays > 0) {
+    business.subscription = buildTrialSubscription(platform.trialDays);
+  }
 
   const passwordHash = await hashPassword(password);
 

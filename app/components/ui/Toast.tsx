@@ -1,10 +1,11 @@
-// components/ui/Toast.tsx
+// app/components/ui/Toast.tsx
 "use client";
 
 import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useState,
   type ReactNode,
 } from "react";
@@ -38,17 +39,29 @@ const VARIANT_CLASSES: Record<ToastVariant, string> = {
 
 const DEFAULT_DURATION_MS = 4000;
 
-// Mount <ToastProvider> once, at the root layout (app/layout.tsx — F6),
-// wrapping the whole app so useToast() works anywhere in the tree.
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
+
+  // The portal target (document.body) only exists on the client. We
+  // flip this flag in an effect — never during render — so the server
+  // HTML and the client's first render produce identical output. The
+  // portal appears only after hydration completes, which is what React
+  // expects.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const dismiss = useCallback((id: string) => {
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
 
   const push = useCallback(
-    ({ message, variant = "info", durationMs = DEFAULT_DURATION_MS }: PushToastInput) => {
+    ({
+      message,
+      variant = "info",
+      durationMs = DEFAULT_DURATION_MS,
+    }: PushToastInput) => {
       const id = crypto.randomUUID();
       setToasts((current) => [...current, { id, message, variant }]);
       window.setTimeout(() => dismiss(id), durationMs);
@@ -59,9 +72,9 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastContext.Provider value={{ push }}>
       {children}
-      {typeof document !== "undefined" &&
+      {mounted &&
         createPortal(
-          <div className="fixed bottom-4 end-4 z-50 flex flex-col gap-2">
+          <div className="fixed bottom-4 inset-e-4 z-50 flex flex-col gap-2">
             {toasts.map((toast) => (
               <div
                 key={toast.id}
