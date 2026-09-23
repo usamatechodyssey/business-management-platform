@@ -612,7 +612,7 @@ Indexes are created automatically on first successful request via `ensureIndexes
 
 **Deployment**
 - [x] Ready for Vercel
-- [ ] Live deployment + smoke test (in progress)
+- [x] Live deployment + smoke test
 
 **Future considerations**
 - JazzCash / EasyPaisa Merchant API for automated payments
