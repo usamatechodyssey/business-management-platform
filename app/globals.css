@@ -29,7 +29,7 @@
   --color-text-muted: var(--color-text-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-urdu: var(--font-noto-nastaliq);
+  --font-urdu: var(--font-noto-naskh);
 }
 
 body {
@@ -39,22 +39,34 @@ body {
   min-height: 100vh;
 }
 
-/* Noto Nastaliq Urdu is a descent-heavy script. Its glyphs extend both
-   well above (kaaf, alif, laam's verticals) and well below (nukte, ی, ج
-   tails) the standard content box, so we open up the line box for RTL. */
-html[dir="rtl"] body {
-  font-family: var(--font-urdu), var(--font-sans);
-  line-height: 2.4;
+/* Naskh glyphs are visually smaller than Latin letters at the same
+   font-size, so we bump the ROOT font-size slightly for RTL. Setting
+   it on <html> (not <body>) matters: Tailwind's text-sm / text-base /
+   text-lg utilities are all rem-based, and rem always resolves against
+   the root element's font-size — so this one rule scales every
+   Urdu label, badge, and button across the whole app uniformly,
+   without touching individual components. The boost is small on
+   mobile (~104%, where space is tight) and a bit more on desktop
+   (~112%, where there's room to breathe). */
+html[dir="rtl"] {
+  font-size: clamp(1.04rem, 1rem + 0.5vw, 1.12rem);
 }
 
-/* `.truncate` sets overflow:hidden, which clips anything that extends
-   beyond the content box. In RTL that clips Nastaliq's ascenders and
-   descenders. Adding symmetrical padding inside the clipped box gives
-   the glyphs the room they need without changing layout around them.
-   Sized in `em` so it scales with the font-size of the element. */
+/* Naskh is a much lighter, less descent-heavy script than Nastaliq,
+   so the line box can be tighter than before (was 2.4 for Nastaliq). */
+html[dir="rtl"] body {
+  font-family: var(--font-urdu), var(--font-sans);
+  line-height: 1.9;
+}
+
+/* `.truncate` sets overflow:hidden, which clips anything extending
+   beyond the content box. Naskh's descenders are shallower than
+   Nastaliq's, so this padding is reduced accordingly — verify
+   visually on real components (badges, tabs, bottom nav) and
+   adjust further if any letters like ج، ی، ر still clip. */
 html[dir="rtl"] .truncate {
-  padding-top: 0.3em;
-  padding-bottom: 0.4em;
+  padding-top: 0.15em;
+  padding-bottom: 0.2em;
 }
 
 * {

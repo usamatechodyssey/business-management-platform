@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Nastaliq_Urdu } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import { getDirection, getDictionary } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n-server";
 import { LocaleProvider } from "@/app/components/layout/LocaleProvider";
@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
-  variable: "--font-noto-nastaliq",
+const notoNaskhArabic = Noto_Naskh_Arabic({
+  variable: "--font-noto-naskh",
   subsets: ["arabic"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={direction}
-      className={`${geistSans.variable} ${geistMono.variable} ${notoNastaliqUrdu.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoNaskhArabic.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LocaleProvider locale={locale} dictionary={dictionary}>

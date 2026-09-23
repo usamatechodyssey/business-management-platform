@@ -50,7 +50,7 @@
     "submit": "جمع کروائیں",
     "required": "لازمی",
     "optional": "اختیاری",
-    "actions": "اعمال",
+    "actions": "کارروائیاں",
     "status": "حیثیت",
     "active": "فعال",
     "inactive": "غیر فعال",
@@ -109,7 +109,7 @@
       "quarter": "پچھلے 3 ماہ",
       "halfYear": "پچھلے 6 ماہ",
       "year": "اس سال",
-      "custom": "حسبِ ضرورت",
+      "custom": "اپنی مرضی",
       "from": "سے",
       "to": "تک",
       "apply": "لاگو کریں"
@@ -117,8 +117,8 @@
     "metrics": {
       "sales": "فروخت",
       "profit": "منافع",
-      "receivables": "واجب الادا",
-      "receivablesHint": "{{count}} گاہکوں کے واجب الادا",
+      "receivables": "باقی",
+      "receivablesHint": "{{count}} گاہکوں کے باقی",
       "lowStock": "کم اسٹاک اشیاء"
     },
     "topItems": "سب سے زیادہ فروخت ہونے والی اشیاء",
@@ -139,8 +139,8 @@
     "editProduct": "پروڈکٹ میں ترمیم کریں",
     "searchPlaceholder": "نام یا کوڈ سے تلاش کریں",
     "filters": {
-      "category": "زمرہ",
-      "allCategories": "تمام زمرے",
+      "category": "کیٹیگری",
+      "allCategories": "تمام کیٹیگری",
       "lowStock": "صرف کم اسٹاک",
       "status": "حیثیت",
       "statusActive": "فعال",
@@ -151,16 +151,16 @@
     "columns": {
       "name": "پروڈکٹ",
       "code": "کوڈ",
-      "category": "زمرہ",
+      "category": "کیٹیگری",
       "stock": "اسٹاک",
       "costPrice": "لاگت",
       "sellPrice": "فروخت",
-      "actions": "اعمال"
+      "actions": "کارروائیاں"
     },
     "fields": {
       "name": "پروڈکٹ کا نام",
       "code": "پروڈکٹ کوڈ",
-      "category": "زمرہ",
+      "category": "کیٹیگری",
       "unit": "یونٹ",
       "stockQty": "اسٹاک کی مقدار",
       "costPrice": "لاگت کی قیمت",
@@ -209,12 +209,12 @@
     "updated": "پروڈکٹ اپ ڈیٹ ہو گئی۔",
     "archived": "پروڈکٹ محفوظ کر دی گئی۔",
     "errors": {
-      "nameRequired": "پروڈکٹ کا نام درکار ہے۔",
+      "nameRequired": "پروڈکٹ کا نام ضروری ہے۔",
       "nameMax": "پروڈکٹ کا نام بہت لمبا ہے۔",
-      "codeRequired": "پروڈکٹ کوڈ درکار ہے۔",
+      "codeRequired": "پروڈکٹ کوڈ ضروری ہے۔",
       "codeMax": "پروڈکٹ کوڈ بہت لمبا ہے۔",
       "codeTaken": "یہ کوڈ پہلے سے استعمال میں ہے۔",
-      "categoryMax": "زمرہ بہت لمبا ہے۔",
+      "categoryMax": "کیٹیگری بہت لمبا ہے۔",
       "unitMax": "یونٹ بہت لمبا ہے۔",
       "stockQtyInvalid": "اسٹاک کی مقدار 0 یا اس سے زیادہ ہونی چاہیے۔",
       "costPriceInvalid": "لاگت کی قیمت 0 یا اس سے زیادہ ہونی چاہیے۔",
@@ -225,7 +225,7 @@
 
   "suppliers": {
     "title": "سپلائرز",
-    "subtitle": "وینڈرز کا انتظام کریں اور ان کے واجب الادا کا حساب رکھیں۔",
+    "subtitle": "وینڈرز کا انتظام کریں اور ان کے باقی کا حساب رکھیں۔",
     "addSupplier": "سپلائر شامل کریں",
     "editSupplier": "سپلائر میں ترمیم کریں",
     "searchPlaceholder": "نام، فون، یا رابطہ سے تلاش کریں",
@@ -236,7 +236,7 @@
       "contactPerson": "رابطہ شخص"
     },
     "card": {
-      "owes": "واجب الادا: {{amount}}",
+      "owes": "باقی: {{amount}}",
       "clear": "حساب صاف",
       "viewPurchases": "خریداریاں",
       "recordPurchase": "نئی خریداری",
@@ -270,11 +270,11 @@
       "selectProduct": "پروڈکٹ منتخب کریں",
       "qty": "مقدار",
       "cost": "فی یونٹ لاگت",
-      "subtotal": "ذیلی میزان",
+      "subtotal": "سب ٹوٹل",
       "removeItem": "شے ہٹائیں",
       "totalCost": "کل لاگت",
       "initialPayment": "ابتدائی ادائیگی",
-      "initialPaymentHelper": "ابھی کتنی ادائیگی کر رہے ہیں۔ پورا واجب الادا شامل کرنے کے لیے 0 چھوڑ دیں۔",
+      "initialPaymentHelper": "ابھی کتنی ادائیگی کر رہے ہیں۔ پورا باقی شامل کرنے کے لیے 0 چھوڑ دیں۔",
       "recordButton": "خریداری ریکارڈ کریں",
       "recorded": "خریداری ریکارڈ ہو گئی۔",
       "noProductsTitle": "پہلے پروڈکٹس شامل کریں",
@@ -292,19 +292,19 @@
       "title": "ادائیگی ریکارڈ کریں",
       "purchaseLabel": "کون سی خریداری",
       "amount": "رقم",
-      "amountHelper": "واجب الادا: {{amount}}",
+      "amountHelper": "باقی: {{amount}}",
       "date": "ادائیگی کی تاریخ",
       "note": "نوٹ",
       "recordButton": "ادائیگی ریکارڈ کریں",
       "recorded": "ادائیگی ریکارڈ ہو گئی۔",
       "empty": {
         "title": "ادائیگی کے لیے کچھ نہیں",
-        "description": "اس سپلائر کی کوئی واجب الادا خریداری نہیں ہے۔"
+        "description": "اس سپلائر کی کوئی باقی خریداری نہیں ہے۔"
       },
       "errors": {
         "purchaseRequired": "کوئی خریداری منتخب کریں۔",
         "amountInvalid": "رقم 0 سے زیادہ ہونی چاہیے۔",
-        "amountExceedsOutstanding": "رقم واجب الادا سے زیادہ نہیں ہو سکتی۔",
+        "amountExceedsOutstanding": "رقم باقی سے زیادہ نہیں ہو سکتی۔",
         "dateInvalid": "درست تاریخ درج کریں۔",
         "noteMax": "نوٹ بہت لمبا ہے۔"
       }
@@ -313,7 +313,7 @@
       "title": "{{name}} — خریداریاں",
       "items": "اشیاء",
       "statusPaid": "ادا شدہ",
-      "statusDue": "{{amount}} واجب الادا",
+      "statusDue": "{{amount}} باقی",
       "deleteConfirm": "اس خریداری کو حذف کریں؟ اسٹاک واپس ہو جائے گا۔",
       "cannotDelete": "جن خریداریوں کی ادائیگیاں ریکارڈ ہو چکی ہیں وہ حذف نہیں ہو سکتیں۔",
       "empty": {
@@ -322,9 +322,9 @@
       }
     },
     "errors": {
-      "nameRequired": "سپلائر کا نام درکار ہے۔",
+      "nameRequired": "سپلائر کا نام ضروری ہے۔",
       "nameMax": "سپلائر کا نام بہت لمبا ہے۔",
-      "phoneRequired": "فون نمبر درکار ہے۔",
+      "phoneRequired": "فون نمبر ضروری ہے۔",
       "phoneMin": "درست فون نمبر درج کریں۔",
       "phoneMax": "فون نمبر بہت لمبا ہے۔",
       "phoneTaken": "یہ فون نمبر پہلے سے کسی دوسرے سپلائر کے نام رجسٹرڈ ہے۔",
@@ -353,7 +353,7 @@
       "notes": "نوٹس"
     },
     "card": {
-      "owes": "واجب الادا: {{amount}}",
+      "owes": "باقی: {{amount}}",
       "clear": "حساب صاف",
       "overLimit": "کریڈٹ کی حد سے زیادہ",
       "viewLedger": "کھاتہ",
@@ -382,18 +382,18 @@
     "payment": {
       "title": "ادائیگی ریکارڈ کریں",
       "amount": "رقم",
-      "amountHelper": "واجب الادا: {{amount}}",
+      "amountHelper": "باقی: {{amount}}",
       "date": "ادائیگی کی تاریخ",
       "note": "نوٹ",
       "recordButton": "ادائیگی ریکارڈ کریں",
       "recorded": "ادائیگی ریکارڈ ہو گئی۔",
       "empty": {
         "title": "ادائیگی کے لیے کچھ نہیں",
-        "description": "اس کسٹمر کا کوئی واجب الادا بیلنس نہیں ہے۔"
+        "description": "اس کسٹمر کا کوئی باقی بیلنس نہیں ہے۔"
       },
       "errors": {
         "amountInvalid": "رقم 0 سے زیادہ ہونی چاہیے۔",
-        "amountExceedsOutstanding": "رقم واجب الادا سے زیادہ نہیں ہو سکتی۔",
+        "amountExceedsOutstanding": "رقم باقی سے زیادہ نہیں ہو سکتی۔",
         "dateInvalid": "درست تاریخ درج کریں۔",
         "noteMax": "نوٹ بہت لمبا ہے۔"
       }
@@ -416,9 +416,9 @@
       }
     },
     "errors": {
-      "nameRequired": "کسٹمر کا نام درکار ہے۔",
+      "nameRequired": "کسٹمر کا نام ضروری ہے۔",
       "nameMax": "کسٹمر کا نام بہت لمبا ہے۔",
-      "phoneRequired": "فون نمبر درکار ہے۔",
+      "phoneRequired": "فون نمبر ضروری ہے۔",
       "phoneMin": "درست فون نمبر درج کریں۔",
       "phoneMax": "فون نمبر بہت لمبا ہے۔",
       "phoneTaken": "یہ فون نمبر پہلے سے کسی دوسرے کسٹمر کے نام رجسٹرڈ ہے۔",
@@ -453,7 +453,7 @@
       "qtyLabel": "مقدار",
       "decrease": "مقدار کم کریں",
       "increase": "مقدار بڑھائیں",
-      "subtotal": "ذیلی میزان",
+      "subtotal": "سب ٹوٹل",
       "total": "کل",
       "checkout": "چیک آؤٹ",
       "itemCountOne": "{{count}} شے",
@@ -488,8 +488,8 @@
       "phoneLabel": "فون نمبر",
       "save": "کسٹمر محفوظ کریں",
       "errors": {
-        "nameRequired": "کسٹمر کا نام درکار ہے۔",
-        "phoneRequired": "فون نمبر درکار ہے۔"
+        "nameRequired": "کسٹمر کا نام ضروری ہے۔",
+        "phoneRequired": "فون نمبر ضروری ہے۔"
       }
     },
     "receipt": {
@@ -499,7 +499,7 @@
       "items": "اشیاء",
       "total": "کل",
       "paid": "ادا شدہ",
-      "due": "واجب الادا",
+      "due": "باقی",
       "method": "طریقہ",
       "customer": "کسٹمر",
       "newSale": "نئی فروخت",
@@ -528,19 +528,19 @@
       "rangeProfit": "{{range}} کا منافع",
       "lifetimeProfit": "کل منافع",
       "totalAllocated": "اس مدت میں مختص",
-      "totalDisbursed": "کل تقسیم شدہ",
-      "totalAvailable": "دستیاب بیلنس",
+      "totalDisbursed": "کل نکالی گئی",
+      "totalAvailable": "باقی رقم",
       "totalPercentageLabel": "موجودہ کل شرح: {{percentage}}%"
     },
     "tier": {
       "percentageLabel": "منافع کا {{percentage}}%",
       "lifetimeAllocation": "کل مختص",
-      "lifetimeDisbursed": "تقسیم شدہ",
+      "lifetimeDisbursed": "نکالی گئی",
       "availableBalance": "دستیاب",
       "disabled": "غیر فعال",
       "enable": "فعال کریں",
       "viewRates": "شرحیں",
-      "viewLedger": "تفصیلی گوشوارہ",
+      "viewLedger": "تفصیلی رپورٹ",
       "currentRate": "موجودہ شرح",
       "rangeAllocationLabel": "اس مدت میں مختص",
       "disable": "غیر فعال کریں",
@@ -596,7 +596,7 @@
         "description": "شرح کی تبدیلیاں یہاں ظاہر ہوں گی جب مالک فیصد اپ ڈیٹ کرے گا۔"
       },
       "columns": {
-        "from": "مؤثر از",
+        "from": "سے",
         "percentage": "فیصد"
       },
       "note": "شرحیں مقرر کرنے کے وقت سے لاگو ہوتی ہیں۔ پچھلے مختص کبھی دوبارہ محسوب نہیں ہوتے۔",
@@ -612,7 +612,7 @@
     "updated": "درجہ اپ ڈیٹ ہو گیا۔",
     "deleted": "درجہ حذف ہو گیا۔",
     "errors": {
-      "nameRequired": "درجے کا نام درکار ہے۔",
+      "nameRequired": "درجے کا نام ضروری ہے۔",
       "nameMax": "درجے کا نام بہت لمبا ہے۔",
       "nameTaken": "اس نام کا درجہ پہلے سے موجود ہے۔",
       "percentageInvalid": "فیصد 0 سے زیادہ اور زیادہ سے زیادہ 100 ہونا چاہیے۔",
@@ -620,24 +620,24 @@
     }
   },
   "tierLedger": {
-    "title": "{{name}} — شرح کی تاریخ کا گوشوارہ",
+    "title": "{{name}} — شرح کی تاریخ کی رپورٹ",
     "totalRow": "کل",
     "notActive": "غیر فعال تھا",
     "subtitle": "ہر شرح کے تحت کتنا منافع ہوا، کتنا مختص ہوا، اور اب کتنا دستیاب ہے۔",
     "columns": {
-      "from": "شرح مؤثر از",
+      "from": "شرح کب سے",
       "to": "تک",
       "percentage": "شرح",
       "profit": "اس مدت میں منافع",
       "allocated": "مختص",
-      "disbursed": "تقسیم شدہ",
+      "disbursed": "نکالی گئی",
       "balance": "بیلنس"
     },
     "currentWindow": "موجودہ",
     "summary": {
       "totalProfit": "کل منافع",
       "totalAllocated": "مختص",
-      "totalDisbursed": "تقسیم شدہ",
+      "totalDisbursed": "نکالی گئی",
       "available": "دستیاب"
     },
     "empty": {
@@ -646,8 +646,8 @@
     },
     "downloadCsv": "CSV ڈاؤن لوڈ کریں",
     "printPdf": "پرنٹ / PDF محفوظ کریں",
-    "printSubtitle": "شرح کی مدت کا گوشوارہ",
-    "printBack": "گوشوارے پر واپس"
+    "printSubtitle": "شرح کی مدت کی رپورٹ",
+    "printBack": "رپورٹ پر واپس"
   },
   "reports": {
     "title": "رپورٹس",
@@ -672,7 +672,7 @@
     },
     "breakdown": {
       "grossProfit": "مجموعی منافع",
-      "deduction": "{{name}} منہا",
+      "deduction": "{{name}} کی کٹوتی",
       "netProfit": "فنڈ کے بعد خالص منافع",
       "noTiers": "کوئی فعال فنڈ درجہ نہیں",
       "noTiersHint": "یہاں کٹوتیاں دیکھنے کے لیے پرافٹ فنڈ صفحے سے ایک درجہ بنائیں۔"
@@ -691,7 +691,7 @@
         "salesCount": "فروخت",
         "spent": "کل خرچ"
       },
-      "empty": "اس مدت میں کوئی منسوب فروخت نہیں۔"
+      "empty": "اس مدت میں کسی کسٹمر کی فروخت نہیں۔"
     },
     "empty": {
       "title": "اس مدت کے لیے کوئی ڈیٹا نہیں",
@@ -711,7 +711,7 @@
       "role": "کردار",
       "status": "حیثیت",
       "lastLogin": "آخری لاگ ان",
-      "actions": "اعمال"
+      "actions": "کارروائیاں"
     },
     "actions": {
       "edit": "ترمیم",
@@ -754,9 +754,9 @@
     "deactivated": "اسٹاف ممبر غیر فعال ہو گیا۔",
     "lastLoginNever": "کبھی نہیں",
     "errors": {
-      "nameRequired": "نام درکار ہے۔",
+      "nameRequired": "نام ضروری ہے۔",
       "nameMax": "نام بہت لمبا ہے۔",
-      "phoneRequired": "فون نمبر درکار ہے۔",
+      "phoneRequired": "فون نمبر ضروری ہے۔",
       "phoneMin": "درست فون نمبر درج کریں۔",
       "phoneMax": "فون نمبر بہت لمبا ہے۔",
       "phoneTaken": "یہ فون نمبر پہلے سے رجسٹرڈ ہے۔",
@@ -785,7 +785,7 @@
       "dayLeft": "1 دن باقی",
       "expiresToday": "آج میعاد ختم",
       "expired": "میعاد ختم",
-      "notSet": "کوئی سبسکرپشن سیٹ نہیں۔ ایڈمن کے پلان تفویض کرنے تک ایپ مفت استعمال کریں۔",
+      "notSet": "کوئی سبسکرپشن سیٹ نہیں۔ ایڈمن کے پلان دینے تک ایپ مفت استعمال کریں۔",
       "statusTrial": "ٹرائل",
       "statusActive": "فعال",
       "statusSuspended": "معطل",
@@ -828,18 +828,18 @@
         "planRequired": "پلان منتخب کریں۔",
         "monthsRequired": "مدت منتخب کریں۔",
         "methodRequired": "ادائیگی کا طریقہ منتخب کریں۔",
-        "transactionIdRequired": "ٹرانزیکشن آئی ڈی درکار ہے۔",
+        "transactionIdRequired": "ٹرانزیکشن آئی ڈی ضروری ہے۔",
         "transactionIdMax": "ٹرانزیکشن آئی ڈی بہت لمبی ہے۔",
         "paidAtInvalid": "درست تاریخ درج کریں۔",
         "notesMax": "نوٹس بہت لمبے ہیں۔",
-        "tooManyPending": "آپ کی پہلے سے کئی ادائیگیاں جائزے کے منتظر ہیں۔ براہ کرم انتظار کریں۔"
+        "tooManyPending": "آپ کی پہلے سے کئی ادائیگیاں چیک ہو رہی ہیں۔ براہ کرم انتظار کریں۔"
       }
     },
     "history": {
       "title": "ادائیگیوں کی تاریخ",
       "emptyTitle": "ابھی کوئی ادائیگی نہیں",
       "emptyDescription": "آپ کی جمع کردہ ادائیگیاں یہاں ظاہر ہوں گی۔",
-      "statusPending": "جائزے کے منتظر",
+      "statusPending": "چیک ہو رہی ہے",
       "statusVerified": "تصدیق شدہ",
       "statusRejected": "مسترد",
       "referenceLabel": "حوالہ",
@@ -911,7 +911,7 @@
       "descriptions": {
         "pos": "چیک آؤٹ، فروخت کی ریکارڈنگ، اور رسیدیں۔",
         "inventory": "پروڈکٹس، اسٹاک ٹریکنگ، اور کم اسٹاک الرٹس۔",
-        "suppliers": "وینڈرز، خریداریاں، اور ان کے واجب الادا۔",
+        "suppliers": "وینڈرز، خریداریاں، اور ان کے باقی۔",
         "customers": "کسٹمر پروفائلز، کھاتہ، اور ادائیگیاں۔",
         "reports": "فروخت، منافع کے رجحانات، اور بہترین اشیاء/کسٹمرز۔",
         "profitFund": "منافع سے کثیر درجوں والا فنڈ مختص۔",
@@ -924,7 +924,7 @@
       "heading": "کھاتہ ترتیبات",
       "description": "آپ کے کاروبار میں کسٹمر کریڈٹ اور کھاتہ کیسے کام کرتا ہے۔",
       "creditLimitEnabled": "کریڈٹ کی حد ٹریک کریں",
-      "creditLimitEnabledHelper": "فی کسٹمر زیادہ سے زیادہ واجب الادا مقرر کریں۔",
+      "creditLimitEnabledHelper": "فی کسٹمر زیادہ سے زیادہ باقی مقرر کریں۔",
       "defaultCreditLimit": "ڈیفالٹ کریڈٹ کی حد",
       "defaultCreditLimitHelper": "جب کسٹمر کی کوئی انفرادی حد مقرر نہ ہو تو استعمال ہوتی ہے۔",
       "blockSaleOnLimitExceeded": "کریڈٹ کی حد سے تجاوز پر فروخت بلاک کریں",
@@ -967,11 +967,11 @@
       "no": "نہیں"
     },
     "errors": {
-      "nameRequired": "کاروبار کا نام درکار ہے۔",
+      "nameRequired": "کاروبار کا نام ضروری ہے۔",
       "nameMax": "کاروبار کا نام بہت لمبا ہے۔",
-      "ownerNameRequired": "مالک کا نام درکار ہے۔",
+      "ownerNameRequired": "مالک کا نام ضروری ہے۔",
       "ownerNameMax": "مالک کا نام بہت لمبا ہے۔",
-      "phoneRequired": "رابطہ فون درکار ہے۔",
+      "phoneRequired": "رابطہ فون ضروری ہے۔",
       "phoneMin": "درست فون نمبر درج کریں۔",
       "phoneMax": "فون نمبر بہت لمبا ہے۔",
       "addressMax": "پتہ بہت لمبا ہے۔",
@@ -1046,8 +1046,8 @@
       "supportEmailHelper": "اختیاری۔ ای میل اشارہ چھپانے کے لیے خالی چھوڑیں۔",
       "blockedHeading": "بلاکڈ اسکرین اوور رائیڈز",
       "blockedDescription": "خالی ہونے پر، بلاکڈ اسکرین بلٹ ان ترجمہ شدہ متن استعمال کرتی ہے۔",
-      "blockedTitleLabel": "حسبِ ضرورت عنوان",
-      "blockedDescLabel": "حسبِ ضرورت تفصیل",
+      "blockedTitleLabel": "اپنی مرضی کا عنوان",
+      "blockedDescLabel": "اپنی مرضی کی تفصیل",
       "blockedOverrideHelper": "ڈیفالٹ استعمال کرنے کے لیے خالی چھوڑیں۔",
       "bulkHeading": "بلک واٹس ایپ ٹیمپلیٹ",
       "bulkDescription": "کاروبار کے صفحے پر یاد دہانیاں بھیجیں ایکشن استعمال کرتا ہے۔",
@@ -1089,7 +1089,7 @@
         "subscription": "حیثیت",
         "daysLeft": "باقی دن",
         "created": "سائن اپ",
-        "actions": "اعمال"
+        "actions": "کارروائیاں"
       },
       "status": {
         "trial": "ٹرائل",
@@ -1126,7 +1126,7 @@
         "progress": "{{current}} از {{total}}",
         "sentCount": "بھیجے گئے: {{count}}",
         "expiresOn": "میعاد",
-        "previewLabel": "پیغام کا پیش منظر",
+        "previewLabel": "پیغام کی جھلک",
         "helper": "واٹس ایپ نئے ٹیب میں کھلے گا۔ وہاں بھیجیں دبائیں، پھر یہاں واپس آکر اگلا دبائیں۔",
         "open": "واٹس ایپ کھولیں",
         "skip": "چھوڑ دیں",
@@ -1166,9 +1166,9 @@
       "actions": {
         "suspend": "معطل کریں",
         "activate": "فعال کریں",
-        "grant": "عطا / تجدید",
+        "grant": "پلان دیں / تجدید کریں",
         "resetPassword": "مالک کا پاس ورڈ ری سیٹ کریں",
-        "impersonate": "مالک کی نقالی"
+        "impersonate": "مالک بن کر دیکھیں"
         
       },
       "suspend": {
@@ -1203,9 +1203,9 @@
         "cancel": "منسوخ کریں"
       },
       "impersonate": {
-        "title": "اس کاروبار کی نقالی کریں؟",
-        "description": "آپ 30 منٹ کے لیے مالک کی طرح سائن ان ہوں گے۔ آپ کا ایڈمن سیشن فعال رہے گا — آپ کسی بھی وقت بینر سے نقالی ختم کر سکتے ہیں۔ یہ عمل ریکارڈ ہوگا۔",
-        "confirm": "نقالی کریں",
+        "title": "اس کاروبار کے مالک بن کر دیکھیں؟",
+        "description": "آپ 30 منٹ کے لیے مالک بن کر سائن ان ہوں گے۔ آپ کا ایڈمن سیشن فعال رہے گا — آپ کسی بھی وقت بینر سے واپس آ سکتے ہیں۔ یہ عمل ریکارڈ ہوگا۔",
+        "confirm": "دیکھیں",
         "cancel": "منسوخ کریں"
       },
       "saved": "محفوظ ہو گیا۔",
@@ -1213,13 +1213,13 @@
       "activated": "کاروبار فعال ہو گیا۔",
       "granted": "سبسکرپشن اپ ڈیٹ ہو گئی۔",
       "passwordReset": "مالک کا پاس ورڈ ری سیٹ ہو گیا۔",
-      "impersonating": "نقالی شروع ہو گئی۔"
+      "impersonating": "اب آپ مالک بن کر دیکھ رہے ہیں۔"
     },
     "payments": {
       "title": "ادائیگیاں",
       "subtitle": "کاروباروں سے سبسکرپشن ادائیگیوں کی تصدیق کریں۔",
       "tabs": {
-        "pending": "زیر التواء",
+        "pending": "انتظار میں",
         "verified": "تصدیق شدہ",
         "rejected": "مسترد",
         "all": "تمام"
@@ -1235,7 +1235,7 @@
         "status": "حیثیت"
       },
       "status": {
-        "pending": "زیر التواء",
+        "pending": "انتظار میں",
         "verified": "تصدیق شدہ",
         "rejected": "مسترد"
       },
@@ -1249,7 +1249,7 @@
       "empty": {
         "title": "کوئی ادائیگی نہیں",
         "description": "کاروباروں کی جمع کردہ ادائیگیاں یہاں ظاہر ہوں گی۔",
-        "pendingTitle": "کوئی زیر التواء ادائیگی نہیں",
+        "pendingTitle": "کوئی ادائیگی انتظار میں نہیں",
         "pendingDescription": "آپ سب مکمل کر چکے ہیں۔",
         "filterTitle": "اس منظر میں کوئی ادائیگی نہیں"
       },
@@ -1269,7 +1269,7 @@
         "rejectionReasonLabel": "مسترد کی وجہ",
         "verifiedByLabel": "تصدیق کنندہ",
         "verifiedAtLabel": "تصدیق کا وقت",
-        "verify": "تصدیق اور عطا کریں",
+        "verify": "تصدیق کر کے پلان دیں",
         "reject": "مسترد کریں",
         "close": "بند کریں",
         "openWhatsApp": "کسٹمر سے واٹس ایپ چیٹ کھولیں"
@@ -1284,8 +1284,8 @@
       },
       "verifyModal": {
         "title": "اس ادائیگی کی تصدیق کریں؟",
-        "description": "تصدیق کرنے سے کرایہ دار کو {{plan}} کے {{months}} ماہ عطا ہوں گے۔ یہ عمل ریکارڈ ہوگا۔",
-        "confirm": "تصدیق اور عطا کریں",
+        "description": "تصدیق کرنے سے کاروبار کو {{plan}} کے {{months}} ماہ مل جائیں گے۔ یہ عمل ریکارڈ ہوگا۔",
+        "confirm": "تصدیق کر کے پلان دیں",
         "cancel": "منسوخ کریں"
       },
       "verifiedToast": "ادائیگی کی تصدیق ہو گئی۔ سبسکرپشن بڑھا دی گئی۔",
@@ -1301,7 +1301,7 @@
         "price": "قیمت",
         "limits": "حدود",
         "order": "ترتیب",
-        "actions": "اعمال"
+        "actions": "کارروائیاں"
       },
       "badges": {
         "trial": "ٹرائل",
@@ -1354,8 +1354,8 @@
       }
     },
     "impersonationBanner": {
-      "text": "آپ {{businessName}} کی نقالی کر رہے ہیں۔",
-      "exit": "نقالی ختم کریں"
+      "text": "آپ {{businessName}} کے مالک بن کر دیکھ رہے ہیں۔",
+      "exit": "واپس جائیں"
     },
     "actions": {
       "title": "آڈٹ لاگ",
@@ -1374,7 +1374,7 @@
         "tenantActivate": "کاروبار فعال",
         "tenantDelete": "کاروبار حذف",
         "tenantGrant": "سبسکرپشن عطا",
-        "tenantImpersonate": "نقالی شروع",
+        "tenantImpersonate": "مالک بن کر دیکھنا شروع",
         "tenantResetOwnerPassword": "مالک کا پاس ورڈ ری سیٹ",
         "paymentVerify": "ادائیگی کی تصدیق",
         "paymentReject": "ادائیگی مسترد",
@@ -1405,7 +1405,7 @@
     "customersLabel": "کسٹمرز",
     "customersDescription": "کسٹمر کی فہرست بشمول رابطہ اور موجودہ بیلنس۔",
     "suppliersLabel": "سپلائرز",
-    "suppliersDescription": "وینڈر کی فہرست بشمول رابطہ اور واجب الادا۔",
+    "suppliersDescription": "وینڈر کی فہرست بشمول رابطہ اور باقی۔",
     "salesLabel": "فروخت",
     "salesDescription": "منتخب حد میں ہر فروخت بشمول میزان اور منافع۔",
     "ledgerLabel": "کھاتہ لیجر",
@@ -1416,7 +1416,7 @@
     "printSubtitle": "تمام ڈیٹا سیٹ ایک دستاویز میں — پروڈکٹس، کسٹمرز، سپلائرز، فروخت، اور کھاتہ۔",
     "printHint": "نئے ٹیب میں کھلے گا۔ کاپی رکھنے کے لیے پرنٹ ڈائیلاگ میں 'Save as PDF' استعمال کریں۔",
     "errors": {
-      "customRangeRequired": "حسبِ ضرورت حد کے لیے 'سے' اور 'تک' دونوں تاریخیں درج کریں۔"
+      "customRangeRequired": "اپنی مرضی کی حد کے لیے 'سے' اور 'تک' دونوں تاریخیں درج کریں۔"
     }
   },
 
@@ -1438,7 +1438,7 @@
     "languageEnglish": "انگریزی",
     "languageUrdu": "اردو",
     "phoneLabel": "بھیجا جا رہا ہے",
-    "previewLabel": "پیغام کا پیش منظر",
+    "previewLabel": "پیغام کی جھلک",
     "send": "واٹس ایپ کھولیں",
     "sent": "واٹس ایپ میں کھل گیا — وہاں بھیجیں دبائیں۔",
     "invalidPhone": "اس کسٹمر کا فون نمبر واٹس ایپ کے لیے استعمال نہیں ہو سکتا۔ پہلے اسے اپ ڈیٹ کریں۔",
